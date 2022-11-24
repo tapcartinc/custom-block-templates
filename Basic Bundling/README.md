@@ -30,7 +30,7 @@ The following suggestions are worth considering to make this block more dynamic 
 - Line 13 (HTML) should be edited to display your product information
 - Line 24 (HTML) should be edited to display your product information
 - Line 25 (HTML) should be edited to display your product information
-- Line 3-28 (JS) should be updated to reflect your specifc implementation fo the `addToCart` App Action
+- Lines 3-28 (JS) should be updated to reflect your specifc implementation fo the `addToCart` App Action
 - CSS in general should be updated to reflect our brand
 
 ### 4. Add a custom font
