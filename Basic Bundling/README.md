@@ -20,7 +20,7 @@ This block allows customers to add multiple products to the cart, with a single 
 3. Copy the CSS from [styles.css](#) file in this folder, and paste it in the CSS tab in the editor
 4. Copy the Javascript from [script.js](#) file in this folder, and paste it in the JS tab in the editor
 
-### 3. Make some code edits
+### 3. Make some optional code edits
 The following suggestions are worth considering to make this block more dynamic for your use-case
 
 - Instead of hardcoding products, could instead make an API reqest to another service to obtain products to bundle. The [product.id](https://docs.tapcart.com/docs/variables) variable could be used as a basis for doing so if this block is placed on a product page.
