@@ -25,6 +25,7 @@ The following suggestions are worth considering to make this block more dynamic 
 
 - Instead of hardcoding products, could instead make an API reqest to another service to obtain products to bundle. The [product.id](https://docs.tapcart.com/docs/variables) variable could be used as a basis for doing so if this block is placed on a product page.
 - Optionally, instead of using an API to conditionally render the products for the bundle, you could add a conditional statement to the block that evaluates on the [product.id](https://docs.tapcart.com/docs/variables) to determine the products to bundle.
+- Line 23 (HTML) should be edited to display an expected discount code
 
 
 ### 4. Add a custom font
