@@ -26,7 +26,12 @@ The following suggestions are worth considering to make this block more dynamic 
 - Instead of hardcoding products, could instead make an API reqest to another service to obtain products to bundle. The [product.id](https://docs.tapcart.com/docs/variables) variable could be used as a basis for doing so if this block is placed on a product page.
 - Optionally, instead of using an API to conditionally render the products for the bundle, you could add a conditional statement to the block that evaluates on the [product.id](https://docs.tapcart.com/docs/variables) to determine the products to bundle.
 - Line 2 (HTML) should be edited to display an expected discount code
-
+- Line 12 (HTML) should be edited to display your product information
+- Line 13 (HTML) should be edited to display your product information
+- Line 24 (HTML) should be edited to display your product information
+- Line 25 (HTML) should be edited to display your product information
+- Line 3-28 (JS) should be updated to reflect your specifc implementation fo the `addToCart` App Action
+- CSS in general should be updated to reflect our brand
 
 ### 4. Add a custom font
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
