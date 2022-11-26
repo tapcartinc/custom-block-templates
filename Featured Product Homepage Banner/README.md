@@ -30,7 +30,7 @@ The following suggestions should be considered to make this block more dynamic f
 - CSS in general should be updated to reflect our brand
 
 ### 4. Add a custom font
-Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
+Import a custom font to conform to your app's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
 
 - `https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap`
 
@@ -38,5 +38,4 @@ Import a custom font to conform to your App's design system by pasting a font li
 You'll know your configuration was successful if your block looks like this:
 
 <img width="398" alt="Screenshot 2022-11-25 at 9 59 11 PM" src="https://user-images.githubusercontent.com/15990327/204074638-afc7edf6-c40a-4a55-b3d0-ce92bb4edad4.png">
-png">
 
