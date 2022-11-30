@@ -3,13 +3,12 @@
 # Gorgias Chat Block
 
 ## Description
-This block allows customers to view XYZ & do ABC. Leading to better conversion rates on product detail pages.
+This block allows customers to interact with an embedded customer support chat thread powered by Gorgias - a leading customer success management tool, built for eCommerce. This block is best placed on a stand alone page given it contains scrolllable content, and various page controls.
 
 ## How this block works
-1. Block checks for X
-2. Then makes a request to Z
-3. Customer can then do Y
-4. From here, customer can do Z
+1. Block uses your Gorgias Application ID + a Gorgias install script to initialize the experience
+2. From here, customers can use the chat just as they would on the website
+3. As the chat grows, the content becomes scrollable, so this block should be the only item included on the page when used
 
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
@@ -19,12 +18,12 @@ This block allows customers to view XYZ & do ABC. Leading to better conversion r
 2. Give it a name by clicking on 'Name your block'
 
 ### 2. Copy this template's HTML, CSS, and JS over to the Custom Block Editor
-2. Copy the HTML from [index.html](#) file in this folder, and paste it in the HTML tab in the editor
-3. Copy the CSS from [styles.css](#) file in this folder, and paste it in the CSS tab in the editor
-4. Copy the Javascript from [script.js](#) file in this folder, and paste it in the JS tab in the editor
+2. Copy the HTML from [index.html](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Gorgias%20Chat/index.html) file in this folder, and paste it in the HTML tab in the editor
+3. Copy the CSS from [styles.css](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Gorgias%20Chat/styles.css) file in this folder, and paste it in the CSS tab in the editor
+4. Copy the Javascript from [script.js](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Gorgias%20Chat/scripts.js) file in this folder, and paste it in the JS tab in the editor
 
 ### 3. Make some code edits
-The following lines of code in the custom block will need to be edited for the block to work as expected. The template also contains comments within the block that point out other optional edits to consider.
+The following lines of code in the custom block will need to be edited for the block to work as expected.
 
 - **[REQUIRED]** Line 26 (JS) should be updated to include your Gorgias Application ID: *applicationId* = `12345`
 
