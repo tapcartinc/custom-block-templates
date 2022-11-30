@@ -1,4 +1,4 @@
-<img width="300" alt="Tapcart_DX_LogoWhite" src="https://user-images.githubusercontent.com/15990327/204074857-94ac726c-fc2a-4de0-a4ff-00b73c042262.png">
+<img height="55" alt="Tapcart_DX_LogoWhite" src="https://user-images.githubusercontent.com/15990327/204074857-94ac726c-fc2a-4de0-a4ff-00b73c042262.png">
 
 # Tapcart Templates for Custom Blocks
 
