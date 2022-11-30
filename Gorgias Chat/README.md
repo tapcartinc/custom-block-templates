@@ -22,7 +22,7 @@ This block allows customers to interact with an embedded customer support chat t
 3. Copy the CSS from [styles.css](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Gorgias%20Chat/styles.css) file in this folder, and paste it in the CSS tab in the editor
 4. Copy the Javascript from [script.js](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Gorgias%20Chat/scripts.js) file in this folder, and paste it in the JS tab in the editor
 
-### 3. Make some code edits
+### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected.
 
 - **[REQUIRED]** Line 27 (JS) should be updated to include your Gorgias Application ID: *applicationId* = `12345`
