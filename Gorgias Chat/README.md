@@ -1,4 +1,4 @@
-<img height="75" alt="Tapcart_DX_LogoWhite" src="https://user-images.githubusercontent.com/15990327/204726832-88b6d8d5-767b-4cf4-8167-584f28081a77.png">
+<img height="55" alt="Tapcart_DX_LogoWhite" src="https://user-images.githubusercontent.com/15990327/204726832-88b6d8d5-767b-4cf4-8167-584f28081a77.png">
 
 # Gorgias Chat Block
 
