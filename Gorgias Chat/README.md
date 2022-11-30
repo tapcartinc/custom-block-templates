@@ -1,4 +1,6 @@
-# Block Name
+![5efb82474d9adf8a3ca19488_logo-gorgias (1) 1](https://user-images.githubusercontent.com/15990327/204726832-88b6d8d5-767b-4cf4-8167-584f28081a77.png)
+
+# Gorgias Chat Block
 
 ## Description
 This block allows customers to view XYZ & do ABC. Leading to better conversion rates on product detail pages.
