@@ -14,7 +14,7 @@
                     clearInterval(timer); 
 
                     var chatStyle = document.createElement('style');
-                    chatStyle.textContent = '.buttons-wrapper {display: none !important}'; // hide x button
+                    chatStyle.textContent = '.buttons-wrapper {display: none !important}'; // Hide x button
                     chatWindowHead.appendChild(chatStyle);
                 }, 50);
             })
