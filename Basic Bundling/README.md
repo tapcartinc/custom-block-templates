@@ -20,7 +20,7 @@ This block allows customers to add multiple products to the cart, with a single 
 2. Copy the CSS from [styles.css](https://github.com/Tapcart-Templates/custom-block-templates/blob/main/Basic%20Bundling/styles.css) file in this folder, and paste it in the CSS tab in the editor
 3. Copy the Javascript from [script.js](https://github.com/Tapcart-Templates/custom-block-templates/blob/main/Basic%20Bundling/scripts.js) file in this folder, and paste it in the JS tab in the editor
 
-### 2. Make some required code edits
+### 3. Make some required code edits
 The following suggestions should be considered to make this block more dynamic for your use-case:
 
 - Line 2 (HTML) should be edited to display an expected discount code
@@ -30,21 +30,19 @@ The following suggestions should be considered to make this block more dynamic f
 - Line 25 (HTML) should be edited to display your product information
 - Lines 3-28 (JS) should be updated to reflect your specifc implementation of the `addToCart` App Action
 - CSS in general should be updated to reflect our brand
-- Instead of hardcoding products, instead make an API reqest to another service to obtain products to bundle. The [product.id](https://docs.tapcart.com/docs/variables) variable could be used as a basis for doing so if this block is placed on a product page.
-- Optionally, instead of using an API to conditionally render the products for the bundle, you could add a conditional statement to the block that evaluates on the [product.id](https://docs.tapcart.com/docs/variables) to determine the products to bundle.
 
-### 3. Make some optional code edits
+### 4. Make some optional code edits
 The following suggestions should be considered to make this block more dynamic for your use-case:
 
 - Instead of hardcoding products, instead make an API reqest to another service to obtain products to bundle. The [product.id](https://docs.tapcart.com/docs/variables) variable could be used as a basis for doing so if this block is placed on a product page.
 - Optionally, instead of using an API to conditionally render the products for the bundle, you could add a conditional statement to the block that evaluates on the [product.id](https://docs.tapcart.com/docs/variables) to determine the products to bundle.
 
-### 4. Add a custom font
+### 5. Add a custom font
 Import a custom font to conform to your app's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
 
 - `https://assets.website-files.com/616f0a7a027baaf59a43390b/62144e9b947056d34a2cb292_Termina-Demi.woff2`
 
-### 5. If making this block conditional based on a given product, then add test values to the block's [Variable Preview Values](https://docs.tapcart.com/docs/variables)
+### 6. If making this block conditional based on a given product, then add test values to the block's [Variable Preview Values](https://docs.tapcart.com/docs/variables)
 - Specifically make note to set values for any `product` variables you use in your block
 
 ## Block preview
