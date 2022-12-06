@@ -1,3 +1,6 @@
+<img height="55" alt="ReBuy Logo" src="[https://user-images.githubusercontent.com/15990327/205842139-40e906e6-7f41-47b8-8076-874e19e75445.png]">
+
+
 # Rebuy Product Recommendations
 
 ## Description
@@ -19,9 +22,8 @@ This block allows customers to receive product recomendations at the bottom of p
 ### 2. Import the following libraries
 To import, copy each library below, and paste it in the 'Import Libraries' dropdown in the 'Settings' tab of the [Custom Blocks Editor.](https://app.tapcart.com/custom-blocks).
 
-- `loremipsum.js`
-- `loremipsum.js`
-- `loremipsum.js`
+- `JsBarcode`
+- `Font Awesome`
 
 ### 3. Copy this template's HTML, CSS, and JS over to the Custom Block Editor
 2. Copy the HTML from [index.html](https://github.com/Tapcart-Templates/custom-block-templates/edit/main/Rebuy%20Product%20Recommendations/index.html) file in this folder, and paste it in the HTML tab in the editor
@@ -33,19 +35,13 @@ The following lines of code in the custom block will need to be edited for the b
 
 - **[REQUIRED]** Line 23 (HTML) should be replaced by your API key
 
-### 5. Add a custom font
-Import the Tapcart font, or a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://ap.tapcart.com/custom-blocks). If using the Tapcart font (below), it will work upon pasting. If using a custom font link, the reference to the font will need to be updated in the CSS tab in the editor.
+### 5. Add test values to the block's Variable Preview Values
+This block is required to use the following variable:
+- `product.id`
 
-- `fontlink.com`
-
-### 6. Add test values to the block's Variable Preview Values
-This block leverages the following variables:
-- `variable.property`
-
-To preview this block as expected, a value will need to be assigned for each variable included in the block. To do this, add a relevant value for each variable by editing the 'Variable Preview Values' JSON in the 'Settings' tab of the [Custom Blocks Editor](https://ap.tapcart.com/custom-blocks).
+To preview this block as expected, a value will need to be assigned for each required variable included in the block. To do this, add a relevant value for `product.id` by editing the 'Variable Preview Values' JSON in the 'Settings' tab of the [Custom Blocks Editor](https://ap.tapcart.com/custom-blocks).
 
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
-
-<img width="402" alt="Block Preview" src="https://user-images.githubusercontent.com/15990327/202594948-b1b0ac76-7b9a-4864-9d27-913782422c5a.png">
+<img width="397" alt="Screenshot 2022-12-05 at 10 54 24 PM" src="https://user-images.githubusercontent.com/15990327/205842139-40e906e6-7f41-47b8-8076-874e19e75445.png">
 
