@@ -1,5 +1,4 @@
-<img height="55" alt="ReBuy Logo" src="https://user-images.githubusercontent.com/15990327/205842139-40e906e6-7f41-47b8-8076-874e19e75445.png">
-
+<img height="55" alt="ReBuy Logo" src="https://user-images.githubusercontent.com/15990327/205843090-3bdf1e11-7ffe-4120-a658-a815b40ccabc.png">
 
 # Rebuy Product Recommendations
 
