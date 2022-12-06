@@ -32,7 +32,9 @@ To import, copy each library below, and paste it in the 'Import Libraries' dropd
 ### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. The template also contains comments within the block that point out other optional edits to consider.
 
-- **[REQUIRED]** Line 23 (HTML) should be replaced by your API key
+- **[REQUIRED]** Line 3 (JS) should be replaced by your ReBuy API key
+- **[If seeking to show similar products, instead of recommendated product]** Line 6 (JS) should be commented out & Line 9 (JS) should be uncommented out
+- Line 31 (CSS) should be updated to change the background color of the 'Add to Cart' button
 
 ### 5. Add test values to the block's Variable Preview Values
 This block is required to use the following variable:
@@ -42,5 +44,6 @@ To preview this block as expected, a value will need to be assigned for each req
 
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
+
 <img width="397" alt="Screenshot 2022-12-05 at 10 54 24 PM" src="https://user-images.githubusercontent.com/15990327/205842139-40e906e6-7f41-47b8-8076-874e19e75445.png">
 
