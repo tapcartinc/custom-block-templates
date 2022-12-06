@@ -27,11 +27,6 @@ The following lines of code in the custom block will need to be edited for the b
 
 - **[REQUIRED]** Line 27 (JS) should be updated to include your Gorgias Application ID: *applicationId* = `12345`
 
-### 4. Add a custom font
-Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://ap.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
-
-- `fontlink.com`
-
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
