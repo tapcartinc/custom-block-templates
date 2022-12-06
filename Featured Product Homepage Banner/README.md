@@ -21,7 +21,7 @@ This block catches a user's attention, and promotres a singular product. From th
 3. Copy the Javascript from [script.js](https://github.com/Tapcart-Templates/custom-block-templates/blob/main/Featured%20Product%20Homepage%20Banner/scripts.js) file in this folder, and paste it in the JS tab in the editor
 
 ### 3. Make some code edits
-The following suggestions should be considered to make this block more dynamic for your use-case:
+The following items should be edited to make this block fit your use-case:
 
 - Line 2 (HTML) should be edited to display your product image
 - Line 3 (HTML) should be edited to display your header
