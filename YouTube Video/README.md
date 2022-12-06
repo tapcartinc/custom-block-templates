@@ -6,7 +6,7 @@
 This block allows customers to watch an embedded Youtube video from within the mobile app.
 
 ## How this block works
-- Uses a Yotube iFrame to render an embedded YouTube video in the native app
+- Uses a Youtube iFrames to render an embedded YouTube video in your app
 
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
@@ -23,10 +23,10 @@ This block allows customers to watch an embedded Youtube video from within the m
 ### 3. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. The template also contains comments within the block that point out other optional edits to consider.
 
-- **[REQUIRED]** Line 23 (HTML) should be replaced by your API key
+- **[REQUIRED]** Line 2 (HTML) source URL will need to be updated to the Youtube video you wish to display: `src="YOUR-VIDEO-URL"`
 
 ## Block preview
-You'll know your configuration was successful if your block looks like this:
+You'll know your configuration was successful if your video renders in the editor:
 
-<img width="402" alt="Block Preview" src="https://user-images.githubusercontent.com/15990327/202594948-b1b0ac76-7b9a-4864-9d27-913782422c5a.png">
+<img width="403" alt="Screenshot 2022-12-05 at 11 18 45 PM" src="https://user-images.githubusercontent.com/15990327/205846338-368cea39-5224-4dc7-929a-096b39570d5e.png">
 
