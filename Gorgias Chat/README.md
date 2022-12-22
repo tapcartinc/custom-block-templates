@@ -28,7 +28,7 @@ The following lines of code in the custom block will need to be edited for the b
 - **[REQUIRED]** Line 27 (JS) should be updated to include your Gorgias Application ID: *applicationId* = `12345`
 > If the block does not render after this step, check to ensure that the Gorgias chat feature is NOT set to hidden (Such as the screen shot below)
 
-<img width="200" alt="Screenshot 2022-12-22 at 3 16 02 PM" src="https://user-images.githubusercontent.com/15990327/209227316-2dae0518-4e9d-43ce-a979-e6198e7031dd.png">
+<img width="300" alt="Screenshot 2022-12-22 at 3 16 02 PM" src="https://user-images.githubusercontent.com/15990327/209227316-2dae0518-4e9d-43ce-a979-e6198e7031dd.png">
 
 
 ## Block preview
