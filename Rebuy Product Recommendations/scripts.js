@@ -74,10 +74,10 @@ const source = `
 </div>
 
 <button class="btn btn-next">
-    <i class="fa-solid fa-chevron-right"></i>
+    <i class="fa-solid fa-chevron-right" style="color:black !important;"></i>
 </button>
 <button class="btn btn-prev">
-    <i class="fa-solid fa-chevron-left"></i>
+    <i class="fa-solid fa-chevron-left" style="color:black !important;"></i>
 </button>
 `;
 
