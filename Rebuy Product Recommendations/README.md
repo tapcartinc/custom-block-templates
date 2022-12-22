@@ -1,6 +1,6 @@
 <img height="55" alt="ReBuy Logo" src="https://user-images.githubusercontent.com/15990327/205843090-3bdf1e11-7ffe-4120-a658-a815b40ccabc.png">
 
-# Rebuy Product Recommendations Block
+# Rebuy Product Recommendations Block (BETA)
 
 ## Description
 This block allows customers to receive product recomendations at the bottom of product details pages. Customers can then add recommended product directly to their cart from this block.
