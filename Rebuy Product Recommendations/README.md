@@ -48,4 +48,4 @@ To preview this block as expected, a value will need to be assigned for each req
 
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
-![IMG_1352](https://user-images.githubusercontent.com/15990327/209225293-24d66e4f-b0a3-4a61-8680-013624fd953b.png)
+<img height="300" alt="Example" src="https://user-images.githubusercontent.com/15990327/209225293-24d66e4f-b0a3-4a61-8680-013624fd953b.png">
