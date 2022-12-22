@@ -81,45 +81,25 @@ body {
 }
 
 .btn-prev {
-  top: 50%;
-  left: 2%;
+  top: 7px;
+  left: 5%;
+  -webkit-color: black !important;
 }
 
 .btn-next {
-  top: 50%;
-  right: 2%;
-}
-
-.prev-icon {
-  position: absolute;
-  left: 4px;
-  top: 2px;
-  width: 0;
-  height: 0;
-  border-top: 18px solid transparent;
-  border-right: 20px solid #727272;
-  border-bottom: 18px solid transparent;
-}
-
-.next-icon {
-  position: absolute;
-  right: 4px;
-  top: 2px;
-  width: 0;
-  height: 0;
-  border-top: 18px solid transparent;
-  border-left: 20px solid #727272;
-  border-bottom: 18px solid transparent;
+  top: 7px;
+  right: 5%;
+  -webkit-color: black !important;
 }
 
 /* Rebuy item styling */
 
-/* Title above the carouse */
+/* Title above the carousel */
 
 .super-title {
   text-align: center;
-  font-family: tapcartBold;
-  font-size: 15px;
+  font-family: tapcartBook;
+  font-size: 14px;
 }
 
 .rebuy-product-container {
@@ -127,6 +107,7 @@ body {
 }
 
 /* Product info (colors can be passed in here) */
+
 .rebuy-product-title,
 .rebuy-price-container,
 .rebuy-add-to-cart,
@@ -164,11 +145,20 @@ body {
 }
 
 .rebuy-select {
+  appearance: none !important;
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 4px;
+  color: black !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
 }
 
 .rebuy-product-options {
