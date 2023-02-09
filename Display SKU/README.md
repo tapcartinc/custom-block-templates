@@ -1,7 +1,7 @@
 # Display Sku
 
 ## Description
-This block allows customer to add a SKU value to their product detail page.
+This block allows customers to add a SKU value to their product detail page.
 This block takes advantage of Tapcart variables, which are built-in inputs for getting context on the user: https://docs.tapcart.com/docs/variables
 
 ## How this block works
