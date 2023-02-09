@@ -1,7 +1,7 @@
 # Add To Cart Clone
 
 ## Description
-This block allows customers to replace the native add to cart button.
+This block allows customers to replace the native add to cart button.<br />
 **[REQUIRED]** A developer will need to make updates for this code to work in production.
 
 ## How this block works
