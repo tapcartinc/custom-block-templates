@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    padding: 0 2px;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.jdgm-write-rev-link.jdgm-write-rev-link{
+  max-width: 200px;
+}
