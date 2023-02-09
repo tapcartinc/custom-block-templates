@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    padding-bottom: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+    padding-left: 18px;
+}
+
+.sku {
+  color: #444444;
+  font-family: "Helvetica";
+  font-size: 15px;
+}
