@@ -2,6 +2,7 @@
 
 ## Description
 This block allows customers to replace the native add to cart button.
+**[REQUIRED]** A developer will need to make updates for this code to work in production.
 
 ## How this block works
 1. When viewing an item on the product detail page the submit button will be present
