@@ -7,8 +7,9 @@ This block allows customers to replace the native add to cart button.<br />
 ## How this block works
 1. When viewing an item on the product detail page the submit button will be present
 2. The button is clicked, and the Tapacart "addToCart" action is processed
-3. Line item attributes will need to be declared and defined in order to be pushed to the cart
-4. You can also determine any necessary rules and conditions based on things like inventory for example
+3. A build in Tapcart Toast feature will appear upon submission dependent on success or error
+4. Line item attributes will need to be declared and defined in order to be pushed to the cart
+5. This blocks displays an example of how to determine rules and conditions based on things like inventory
 
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
