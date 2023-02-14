@@ -20,7 +20,6 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 1. Copy the HTML from the [index.html](#) file in this folder, and paste it in the HTML tab in the editor
 2. Copy the CSS from the [styles.css](#) file in this folder, and paste it in the CSS tab in the editor
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
-4. Copy the JSON from the [variable-preview-values.json](#) file in this folder, and paste it in the Variable Preview Values text box in the editor (Located in the 'Settings' tab)
 
 ### 3. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
