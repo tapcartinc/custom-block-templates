@@ -1,6 +1,6 @@
 // Adjust values below per merchant
 // Replace with Merchant API Key
-const apiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+const apiKey = "dafd5187be5b5ada05f761e64d42fe082068912b";
 
 // Recommended AI endpoint
 const endpoint = "/api/v1/products/recommended";
@@ -43,7 +43,7 @@ const source = `
                         &#36;{{selected_variant.price}}
                     </span>
                     <span class="rebuy-price-compare">
-                        {{#if compare_at_price}}
+                        {{#if (compareAtPirce variants)}}
                         &#36;{{selected_variant.compare_at_price}}
                         {{/if}}
                     </span>
@@ -218,6 +218,17 @@ function registerHelpers() {
     const hasStock = variant.inventory_quantity > 0;
     return !hasStock;
   });
+
+  Handlebars.registerHelper("compareAtPirce", function (variants) {
+    if (!variants[0].compare_at_price) return false;
+    const price = parseFloat(variants[0].price);
+    const compareAt = parseFloat(variants[0].compare_at_price);
+
+    if (price >= compareAt) {
+      return false;
+    }
+    return true;
+  });
 }
 
 function formatData(info) {
@@ -296,9 +307,12 @@ function updateVariantImage(productIndex, selectedVariant, attr) {
     const variantWithImageId = selectedProduct.variants.find(
       (variant) => variant.option1 === option1 && variant.image_id
     );
-    image = selectedProduct.images.find(
-      (img) => img.id == variantWithImageId.image_id
-    );
+  
+    if (variantWithImageId) {
+      image = selectedProduct.images.find(
+        (img) => img.id == variantWithImageId.image_id
+      );
+    }
   }
 
   if (image && image.src) {
@@ -309,16 +323,22 @@ function updateVariantImage(productIndex, selectedVariant, attr) {
 }
 
 function updateVariantPrice(selectedVariant, attr) {
-  const price = document.querySelector(`#${attr} .rebuy-price`);
-  const compareAtPrice = document.querySelector(
+  const price = parseFloat(selectedVariant.price);
+  const compareAt = parseFloat(selectedVariant.compare_at_price);
+
+  const priceElement = document.querySelector(`#${attr} .rebuy-price`);
+  const compareAtPriceElement = document.querySelector(
     `#${attr} .rebuy-price-compare`
   );
 
-  price.textContent = `$${selectedVariant.price}`;
-  if (selectedVariant.compare_at_price) {
-    compareAtPrice.textContent = `$${selectedVariant.compare_at_price}`;
+  if (priceElement) {
+    priceElement.textContent = `$${selectedVariant.price}`;
+  }
+
+  if (compareAt && !Number.isNaN(compareAt) && compareAt > price) {
+    compareAtPriceElement.textContent = `$${selectedVariant.compare_at_price}`;
   } else {
-    compareAtPrice.textContent = "";
+    compareAtPriceElement.textContent = "";
   }
 }
 
