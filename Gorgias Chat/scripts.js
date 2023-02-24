@@ -28,7 +28,7 @@
     document.querySelector('body').appendChild(script);
 })();
 
-document.getElementById("chatbot").style.height = Tapcart.variables.device.windowHeight + "px";
+document.getElementById("scriptContainer").style.height = Tapcart.variables.device.windowHeight + "px";
 
 // block-vendor:gorgias
 // block-type:chatbot
