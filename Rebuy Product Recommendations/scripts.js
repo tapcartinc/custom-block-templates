@@ -481,3 +481,6 @@ async function initRebuy() {
 }
 
 initRebuy();
+
+// block-vendor:rebuy
+// block-type:product-recommendations
