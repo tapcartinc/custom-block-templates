@@ -18,7 +18,7 @@ This block takes advantage of Tapcart variables, which are built-in inputs for g
 2. Give it a name by clicking on 'Name your block'
 
 ### 2. Import any required Libaries (No libraries are needed for this function to work out of box at the moment)
-In the future should you need to important libraries go to the 'Import Libraries' dropdown in the 'Settings' tab of the [Custom Blocks Editor.](https://app.tapcart.com/custom-blocks).
+In the future should you need to important libraries go to the 'Import Libraries' dropdown in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks).
 
 ### 3. Copy this template's HTML, CSS, and JS over to the Custom Block Editor
 1. Copy the HTML from the [index.html](#) file in this folder, and paste it in the HTML tab in the editor
