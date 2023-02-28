@@ -26,7 +26,7 @@ In the future should you need to important libraries go to the 'Import Libraries
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
 4. Copy the JSON from the [variable-preview-values.json](#) file in this folder, and paste it in the Variable Preview Values text box in the editor (Located in the 'Settings' tab)
 
-### 4. Make some code edits (No code edits are needed for this function to work out of box the moment)  
+### 4. Make some code edits (No code edits are needed for this function to work out of box at the moment)  
 This function will work out of box as is
 
 
