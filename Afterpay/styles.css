@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Circular LTD;
+    font-size: 14px;
+}
+
+p {
+    white-space: nowrap;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 4px;
+    padding-left: 17px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+}
+
+.get-price {
+    display: none;
+}
+
+#svg {
+    padding-top: 7px;
+    padding-left: 24px;
+}
+  
