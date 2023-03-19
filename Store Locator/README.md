@@ -7,8 +7,9 @@ This block allows customers to find a store near their current geolocation.
 ## How this block works
 1. This block will ask a user to enable geolocation settings
 2. If permitted it will take their current coordinates and run a lookup
-3. By comparing 3 static store location it will determine the store with the shortest distance
-4. The output will be display at the very top
+3. By comparing 3 static store locations and the current location, it will determine the store with the shortest distance
+4. The "store nearest you" output will be display at the very top section
+5. The other 2 stores will be removed from the user interface as it displays within the preview within the Custom Block
 
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
