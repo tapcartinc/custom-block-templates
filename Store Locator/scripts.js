@@ -57,7 +57,7 @@ if (navigator.geolocation) {
             position.coords.longitude
         );
         document.getElementById("output").innerHTML =
-            "You are closest to " + closestCity;
+            "You are closest to the " + closestCity + " store.";
         if (closestCity === "Los Angeles, California") {
             document.querySelector(".Austin").style.display = "none";
             document.querySelector(".Miami").style.display = "none";
