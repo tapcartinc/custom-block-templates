@@ -1,4 +1,4 @@
-# Block Name
+# YouTube Shorts Quad Block
 
 ## Description
 This code creates a 4 video YouTube Shorts block in a 2x2 grid that is optimized for a 9:16 aspect ratio. This block can be added to the homepage or pdp.
