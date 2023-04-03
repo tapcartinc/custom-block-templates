@@ -27,3 +27,4 @@ Import a custom font to conform to your App's design system by pasting a font li
 - `@import url('https://fonts.cdnfonts.com/css/circular-std');`
 
 ## Block preview
+![carousel pmg](https://user-images.githubusercontent.com/122114430/229627693-84fef4ff-89c8-41ae-a7de-ce277cdf6b13.png)
