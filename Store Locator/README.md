@@ -24,8 +24,13 @@ This block allows customers to find a store near their current geolocation.
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
 
 ## Block preview
+
 All store locations will display in the preview, but will filter the nearest store location once permission is granted.
+
 ![StoreLocator](https://user-images.githubusercontent.com/122114430/229633132-caf49367-8b55-4a54-9d2f-47111201c2c1.png)
+
+
+Here is what it will look like to the end user.
 
 <img width="421" alt="ClosestStore" src="https://user-images.githubusercontent.com/122114430/229633748-ee509054-1fdc-41e7-bc61-4af46ca0c5ff.png">
 
