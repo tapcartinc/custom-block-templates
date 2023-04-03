@@ -32,4 +32,6 @@ The following lines of code in the custom block will need to be edited for the b
 ### 5. Add a custom font (Optional)
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
 
+## Block preview
+![Afterpay](https://user-images.githubusercontent.com/122114430/229628079-dcc6a338-1600-4327-a894-617465318b0c.png)
 
