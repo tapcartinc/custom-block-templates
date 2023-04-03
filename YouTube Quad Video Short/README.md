@@ -22,3 +22,6 @@ This code creates a 4 video YouTube Shorts block in a 2x2 grid that is optimized
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
 
 - **[REQUIRED]** Replace the youtube links on lines 5, 10, 17, 22 with your own selected youtube shorts
+
+## Block preview
+![ytshort](https://user-images.githubusercontent.com/122114430/229629004-50eee41e-6e3b-47dd-bea6-da03231b3b8d.png)
