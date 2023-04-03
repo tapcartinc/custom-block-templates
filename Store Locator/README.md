@@ -27,3 +27,5 @@ This block allows customers to find a store near their current geolocation.
 All store locations will display in the preview, but will filter the nearest store location once permission is granted.
 ![StoreLocator](https://user-images.githubusercontent.com/122114430/229633132-caf49367-8b55-4a54-9d2f-47111201c2c1.png)
 
+![StoreNearestYou](https://user-images.githubusercontent.com/122114430/229633644-fcd455ce-b3e6-49b2-a37a-d49dd2442f23.png)
+
