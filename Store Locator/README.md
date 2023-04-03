@@ -24,4 +24,7 @@ This block allows customers to find a store near their current geolocation.
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
 
 ## Block preview
-The store locations will display in the preview, but the full functioning code will work once you're block is dragged and dropped into the tapcart application itself.
+All store locations will display in the preview, but will filter the nearest store location once permission is granted.
+![StoreLocator](https://user-images.githubusercontent.com/122114430/229633132-caf49367-8b55-4a54-9d2f-47111201c2c1.png)
+
+![StoreNearestYou](https://user-images.githubusercontent.com/122114430/229633197-c0be6e77-065f-4069-8dd9-88e7cdaf5674.png)
