@@ -27,3 +27,4 @@ To preview this block as expected, a value will need to be assigned for each var
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
+<img width="638" alt="vendor" src="https://user-images.githubusercontent.com/122114430/230655313-9ccb04dd-0914-4022-9aab-dfa61c0812c0.png">
