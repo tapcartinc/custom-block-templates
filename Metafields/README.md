@@ -56,7 +56,8 @@ Import a custom font to conform to your App's design system by pasting a font li
 To preview this block as expected, a value will need to be assigned for each variable included in the block. To do this, add a relevant value for each variable by editing the 'Variable Preview Values' JSON in the 'Settings' tab of the [Custom Blocks Editor](https://ap.tapcart.com/custom-blocks).
 
 ## Block preview
-You'll know your configuration was successful if your block looks like this:
+You'll know your configuration was successful if your block preview looks like this:
 
+<img width="419" alt="meta" src="https://user-images.githubusercontent.com/122114430/232090291-093f65f8-f128-4e97-a935-1fc657ca30f1.png">
 
 
