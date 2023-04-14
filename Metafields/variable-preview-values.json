@@ -1,0 +1,62 @@
+{
+    "customer": {
+     "id": "779544431",
+     "first_name": "John"
+    },
+    "device": {
+     "id": "25679b7e-2348-44da-94ef-e218f6be4586",
+     "locale": "en"
+    },
+    "product": {
+     "id": "6875079049404",
+     "description": "<p>Vintage cotton Tapcart shirt</p>",
+     "options": [
+      {
+       "name": "Color",
+       "values": [
+        "Black",
+        "Blue"
+       ]
+      }
+     ],
+     "handle": "vintage-shirt",
+     "tags": [
+      "Vintage",
+      "Cotton",
+      "New"
+     ],
+     "availableForSale": true,
+     "title": "Vintage Tapcart Shirt",
+     "price": 55,
+     "metafields": {
+        "myNamespace1": {
+            "myKey1" : "myValue1"
+        },
+        "marketing": {
+            "content" : "Ipsum Lorem..."
+        }
+    },
+     "compareAtPrice": 100,
+     "vendor": "Tapcart",
+     "images": [
+      "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg"
+     ],
+     "variants": [
+      {
+       "selectedOptions": [
+        {
+         "name": "Color",
+         "value": "Black"
+        }
+       ],
+       "id": "40122114900156",
+       "price": 55,
+       "title": "Vintage Tapcart Shirt",
+       "isAvailable": true,
+       "compareAtPrice": 100,
+       "image": "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg",
+       "sku": "12938412"
+      }
+     ]
+    }
+   }
