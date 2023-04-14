@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/circular-std');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -7,14 +9,13 @@
   
   .add-to-cart {
     border-radius: 4px;
-    /* padding: 16px 24px; */
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     outline: none;
     border: none;
     background: none;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     background: black;
     min-width: 100px;
     width: 100%;

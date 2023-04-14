@@ -1,7 +1,12 @@
-//Tapcart App Action for adding the line items to the cart
+// Tapcart Variables
+var selectedVariantId = Tapcart.variables.product.selectedVariant.id;
+
+// Tapcart Register Event Handler
+Tapcart.registerEventHandler("product/updated", (data) => {
+  selectedVariantId = data.product.selectedVariant.id;
+});
+
 function addToCart() {
-    const selectedVariantId = Tapcart.variables.product.selectedVariant.id;
-    console.log(selectedVariantId);
   
     // Below is a hardcoded example of a variable called productInventory
     // This example provide and IF/Else condition
@@ -14,6 +19,7 @@ function addToCart() {
     // const productInventory = 40; 
     
     if(productInventory > 50) {  
+      //Tapcart App Action for adding the line items to the cart
       Tapcart.actions.addToCart({
           lineItems: [{
             quantity: 1,
