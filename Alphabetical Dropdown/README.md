@@ -34,5 +34,7 @@ To preview this block as expected, a value will need to be assigned for each var
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
+![dropdown_closed](https://user-images.githubusercontent.com/122114430/233478635-f8c46b80-14ee-4c93-9934-6e7796951286.png)
 
+![dropdown_open](https://user-images.githubusercontent.com/122114430/233478653-3d597ff3-5e7a-4a36-8879-09f17c60eed7.png)
 
