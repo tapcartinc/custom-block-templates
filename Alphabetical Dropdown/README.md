@@ -24,7 +24,7 @@ This block allows customers display any kind of content in the product detail pa
 ### 3. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
 
-- **[OPTIONAL]** Lines 3 and 5 (HTML) will give you a field for udpates to the Title and Content sections.
+- **[OPTIONAL]** Lines 3 and 5 (HTML) will give you a feel for udpates to the Title and Content sections.
 
 ### 4. Add a custom font
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
