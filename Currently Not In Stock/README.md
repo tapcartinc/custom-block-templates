@@ -3,6 +3,7 @@
 ## Description
 This block allows customers to know if a product or selected variant is on backorder. This template uses the Shopify storefront api in order to pull this information in order to display in the user-interface. To learn more check out the Shopify API documentation: https://shopify.dev/docs/api/storefront/2023-01/objects/ProductVariant#field-productvariant-currentlynotinstock -> "Whether a product is out of stock but still available for purchase (used for backorders)."
 
+<img width="842" alt="in_stock" src="https://user-images.githubusercontent.com/122114430/233744828-fcc2dc29-992f-4cb4-ae2c-db32c5cb900e.png">
 
 
 ## How this block works
@@ -45,5 +46,6 @@ To preview this block as expected, a value will need to be assigned for each var
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
+<img width="419" alt="currentlyNotInStock" src="https://user-images.githubusercontent.com/122114430/233744769-4a4ae298-b28d-4643-a0af-31528fabe96b.png">
 
 
