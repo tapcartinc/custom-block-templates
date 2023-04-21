@@ -1,0 +1,89 @@
+@import url("https://fonts.cdnfonts.com/css/circular-std");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Circular Std", sans-serif;
+  -ms-overflow-style: none !important;
+}
+
+#product-carousel {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  grid-gap: 8px;
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 15px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#product-carousel::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.product-card {
+  width: 225px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  /*   border: 1px solid lightgray; */
+  padding: 5px;
+  background: White;
+  /*   border-style: none; */
+  /*   border-radius: 10px; */
+}
+
+img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+p {
+  font-size: 10px;
+  padding: 4px;
+}
+
+label {
+  display: block;
+  font-family: CircularStd-Medium, -apple-system, BlinkMacSystemFont, Helvetica,
+    Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  color: #212121;
+  margin-top: 34px;
+  margin-left: 14px;
+}
+
+.compare {
+  text-decoration: line-through;
+}
+
+.row {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  margin-bottom: 16px;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
