@@ -46,6 +46,7 @@ To preview this block as expected, a value will need to be assigned for each var
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
-<img width="419" alt="currentlyNotInStock" src="https://user-images.githubusercontent.com/122114430/233744769-4a4ae298-b28d-4643-a0af-31528fabe96b.png">
+<img width="418" alt="preorder" src="https://user-images.githubusercontent.com/122114430/233744941-b8508775-7c05-4d31-9c9a-f3ea0a6ad158.png">
+
 
 
