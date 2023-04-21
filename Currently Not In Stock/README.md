@@ -25,19 +25,24 @@ This block allows customers to know if a product or selected variant is on backo
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
 4. Copy the JSON from the [variable-preview-values.json](#) file in this folder, and paste it in the Variable Preview Values text box in the editor (Located in the 'Settings' tab)
 
-### 3. Make some code edits
+### 3. Import the following libraries
+To import, copy each library below, and paste it in the 'Import Libraries' dropdown in the 'Settings' tab of the [Custom Blocks Editor.](https://app.tapcart.com/custom-blocks).
+
+- `Shopify JS Buy SDK - V2`
+
+### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
 
 - **[REQUIRED]** Line 27 and 31 (JAVASCRIPT) should be replaced by your store settings. You should also update the JSON selected variant id with an out of stock/backorder item if you'd like to test the template inside of the custom block preview screen.
 
 If you have no need for replacing the add to cart button, you can remove lines 57-65 of the (JAVASCRIPT) and remove line 3 from the (HTML).
 
-### 4. Add a custom font
+### 5. Add a custom font
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
 
 - `fontlink.com`
 
-### 5. Add test values to the block's Variable Preview Values
+### 6. Add test values to the block's Variable Preview Values
 This block leverages the following variables:
 - `variable.property`
 
