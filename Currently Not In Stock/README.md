@@ -1,4 +1,4 @@
-# Currently Not In Stock
+# Currently Not In Stock (Preorder)
 
 ## Description
 This block allows customers to know if a product or selected variant is on backorder. This template uses the Shopify storefront api in order to pull this information in order to display in the user-interface. To learn more check out the Shopify API documentation: https://shopify.dev/docs/api/storefront/2023-01/objects/ProductVariant#field-productvariant-currentlynotinstock -> "Whether a product is out of stock but still available for purchase (used for backorders)."
@@ -28,7 +28,7 @@ This block allows customers to know if a product or selected variant is on backo
 ### 3. Import the following libraries
 To import, copy each library below, and paste it in the 'Import Libraries' dropdown in the 'Settings' tab of the [Custom Blocks Editor.](https://app.tapcart.com/custom-blocks).
 
-- `Shopify JS Buy SDK - V2`
+- `None required at this time`
 
 ### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
