@@ -40,4 +40,5 @@ To preview this block as expected, a value will need to be assigned for each var
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
+<img width="330" alt="reviews" src="https://user-images.githubusercontent.com/122114430/235240710-6b55ad6a-b415-4e36-a59f-f2dc8ecd1579.png">
 
