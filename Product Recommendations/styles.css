@@ -35,11 +35,8 @@
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  /*   border: 1px solid lightgray; */
   padding: 5px;
   background: White;
-  /*   border-style: none; */
-  /*   border-radius: 10px; */
 }
 
 img {
@@ -78,6 +75,7 @@ label {
 
 .row {
   display: flex;
+  align-items: flex-start;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
@@ -86,4 +84,11 @@ label {
 
 .row::-webkit-scrollbar {
   display: none;
+}
+
+.product-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
