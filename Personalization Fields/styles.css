@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Circular Std', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 16px;
+    background: white;
+}
+
+.add-to-cart {
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 15px;
+    background: black;
+    min-width: 100px;
+    width: 100%;
+}
+
+#ringSizeInput,
+#initialsInput,
+#nameInput {
+    width: 100%;
+    padding: 5px;
+}
