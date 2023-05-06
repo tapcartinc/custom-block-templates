@@ -35,4 +35,7 @@ Import a custom font to conform to your App's design system by pasting a font li
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
+<img width="426" alt="personalization" src="https://user-images.githubusercontent.com/122114430/236593422-2d9ac60d-b776-4a39-add4-996bc6d04daf.png">
+
+
 
