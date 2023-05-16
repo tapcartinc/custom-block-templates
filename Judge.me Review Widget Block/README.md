@@ -12,16 +12,23 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
 
-### 1. Create a new Custom Block
+### 1. Enable Platform-independent Review Widgets from Shopify Admin 
+1. Go to your JudgeMe app in Shopify Admin
+2. In your JudgeMe app go to Settings > Integrations > Developers > Platform-independent Review Widgets
+3. Enable the toggle.  
+
+![Alt Text](/Judge.me%20Review%20Widget%20Block/assets/Screenshot%202023-05-16%20at%203.27.57%20PM.png)
+
+### 2. Create a new Custom Block
 1. Start [here](https://app.tapcart.com/custom-blocks) to create a new Custom Block
 2. Give it a name by clicking on 'Name your block'
 
-### 2. Copy this template's HTML, CSS, and JS over to the Custom Block Editor
+### 3. Copy this template's HTML, CSS, and JS over to the Custom Block Editor
 1. Copy the HTML from the [index.html](#) file in this folder, and paste it in the HTML tab in the editor
 2. Copy the CSS from the [styles.css](#) file in this folder, and paste it in the CSS tab in the editor
 3. Copy the Javascript from the [script.js](#) file in this folder, and paste it in the JS tab in the editor
 
-### 3. Make some code edits
+### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
 
 - **[REQUIRED]** Line 11 (JAVASCRIPT)) should be replaced by your DOMAIN
