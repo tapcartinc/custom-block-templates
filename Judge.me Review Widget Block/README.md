@@ -17,7 +17,7 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 2. In your JudgeMe app go to Settings > Integrations > Developers > Platform-independent Review Widgets
 3. Enable the toggle.  
 
-![Alt Text](/Judge.me%20Review%20Widget%20Block/assets/Screenshot%202023-05-16%20at%203.27.57%20PM.png)
+<img src="/Judge.me Review Widget Block/assets/Screenshot 2023-05-16 at 3.27.57 PM.png" alt="Alt Text" width="300" height="200">
 
 ### 2. Create a new Custom Block
 1. Start [here](https://app.tapcart.com/custom-blocks) to create a new Custom Block
