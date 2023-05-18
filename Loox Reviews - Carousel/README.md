@@ -25,10 +25,12 @@ The LOOX Reviews block displays product reviews from your LOOX account. It retri
 ### 3. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected.
 
-- **[REQUIRED]** Line 5 (JavaScript) remove the "{{{ YOUR-STORE-HANDLE}}}" and replace with your store handle.  For example:  the store emmys-tapcart-boutique.myshopify.com, the store handle is `emmys-tapcart-boutique`
+- **[REQUIRED]** Line 5 (JavaScript) replace "YOUR-STORE-HANDLE" with your store handle.  For example: for the store emmys-tapcart-boutique.myshopify.com, the store handle is `emmys-tapcart-boutique`
 
+- To preview in the Code Editor, add a PRODUCT ID to the Variable Preview JSON To do this, enter the editor, select the 'Settings' tab, and use the text box to assign preview values. If a variable receives a value in this text box, the editor will automatically assign this value to the occurrence of the variable in the block preview.  See image below.
 
-## Block preview
+![Variable JSON object](../Loox%20Reviews%20-%20Carousel/assets/Screenshot%202023-05-18%20at%204.59.05%20PM.png)
+
 
 
 
