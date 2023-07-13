@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Sofia-Pro_Light';
+    src: url('https://fonts.tapcart-kpowell.repl.co/fonts/Sofia-Pro_Light.otf') format('truetype');
+  }
+  
+  * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+     font-family: 'Sofia-Pro_Light', sans-serif;
+  }
+  
+  h1 {
+      margin: 10px 0px;
+  }
+  
+  h3 {
+      padding-left: 15px;
+      padding-bottom: 5px;
+      padding-top: 10px;
+      font-size:18px;
+      font-weight:100;
+  }
+  
+  .top {
+      padding-left: 14px;
+  }
+  
+  .recommendations {
+      display: flex;
+      overflow: hidden;
+      align-items: stretch;
+      width: 100%;
+      overflow: auto;
+      
+  }
+  
+  .product-card {
+  /*     border: 1px solid #ccc; */
+      margin-right: 8px;
+      padding: 1px;
+      min-width: 39%;
+  }
+  
+  .product-image {
+      width: 100%;
+      height: auto;
+  }
+  
+  .product-price {
+      font-size: 15px;
+      margin: 5px 0;
+  }
+  
+  .product-title {
+   padding-top: 2px;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.0432px;
+      color: #666362;
+  }
+  
+  .recommendations-title {
+    color: rgb(69, 69, 69);
+    font-size: 15px;
+  }
+  
