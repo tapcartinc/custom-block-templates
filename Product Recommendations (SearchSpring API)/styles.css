@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Sofia-Pro_Light';
-    src: url('https://fonts.tapcart-kpowell.repl.co/fonts/Sofia-Pro_Light.otf') format('truetype');
-  }
-  
   * {
       box-sizing: border-box;
       padding: 0;
@@ -18,8 +13,8 @@
       padding-left: 15px;
       padding-bottom: 5px;
       padding-top: 10px;
-      font-size:18px;
-      font-weight:100;
+      font-size: 18px;
+      font-weight: 100;
   }
   
   .top {
@@ -32,7 +27,6 @@
       align-items: stretch;
       width: 100%;
       overflow: auto;
-      
   }
   
   .product-card {
