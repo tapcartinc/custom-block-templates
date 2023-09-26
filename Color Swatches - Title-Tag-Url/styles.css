@@ -1,0 +1,35 @@
+@import url("https://fonts.cdnfonts.com/css/circular-std-book");
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 1px;
+  font-family: "Circular Std Book", sans-serif;
+}
+.product-colors {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.colors-list {
+  list-style-type: none;
+}
+.colors-list li {
+  display: inline;
+}
+
+.colors-list li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.current {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.current_color {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}

@@ -4,6 +4,8 @@
 This block allows merchants to incorporate Shopify Metafields. This could include content, markup, or any number of ways in which you decide to utilize the data you're storing.
 - **[REQUIRED]** It is imperative that you setup and enable metafields to your storefront before walking through this exercise: https://help.shopify.com/en/manual/custom-data/metafields
 
+- **[REQUIRED]** It is imperative that you also enable metafields in your Tapcart Dashboard > Customizations > Metafields.  Check out the help document here: https://help.tapcart.com/hc/en-us/articles/8699625283859-Enabling-Metafields
+
 ## How this block works
 1. A div is created in the markup in order to display the information from your metafield
 2. Inside of the javascript there is a variables using the Tapcart variable to get the metafield values
