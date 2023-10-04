@@ -1,0 +1,792 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+.color {
+  height: 25px;
+  padding-left: 15px;
+}
+
+h1 {
+  margin: 10px 0px;
+}
+
+span {
+  padding-bottom: 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#swatch-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.swatch-circle {
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #5a5a5a;
+}
+
+.br {
+  padding-left: 15px;
+}
+
+.col-Color-core-black {
+  background-color: #000000;
+}
+
+.col-Color-jet-black {
+  background-color: #000000;
+}
+
+.col-Color-onyx-black {
+  background-color: #000000;
+}
+
+.col-Color-cobalt-blue {
+  background-color: #020664;
+}
+
+.col-Color-navy {
+  background-color: #064680;
+}
+
+.col-Color-washed-black {
+  background-color: #0f0f0f;
+}
+
+.col-Color-dark-blue {
+  background-color: #1b62a2;
+}
+
+.col-Color-teal {
+  background-color: #1f7dad;
+}
+
+.col-Color-neon-green {
+  background-color: #1fff0f;
+}
+
+.col-Color-neon-blue {
+  background-color: #26a8f2;
+}
+
+.col-Color-steel-blue {
+  background-color: #274d71;
+}
+
+.col-Color-jewel-blue {
+  background-color: #2e3c59;
+}
+
+.col-Color-indigo {
+  background-color: #3964c3;
+}
+
+.col-Color-royal-blue {
+  background-color: #4169e1;
+}
+
+.col-Color-aubergine {
+  background-color: #472c4c;
+}
+
+.col-Color-cerulean-blue {
+  background-color: #487cd7;
+}
+
+.col-Color-teal-print {
+  background-color: #4fe2fb;
+}
+
+.col-Color-striped-print {
+  background-color: #56bea7;
+}
+
+.col-Color-deep-purple {
+  background-color: #570861;
+}
+
+.col-Color-blue-print {
+  background-color: #59aded;
+}
+
+.col-Color-dusty-blue {
+  background-color: #5f7fb8;
+}
+
+.col-Color-grey-print {
+  background-color: #616161;
+}
+
+.col-Color-limited-edition-chocolate {
+  background-color: #93411b;
+}
+
+.col-Color-wine {
+  background-color: #651827;
+}
+
+.col-Color-dark-purple {
+  background-color: #683498;
+}
+
+.col-Color-charcoal {
+  background-color: #6c6868;
+}
+
+.col-Color-gunmetal {
+  background-color: #6c7079;
+}
+
+.col-Color-turquoise {
+  background-color: #6ccfcc;
+}
+
+.col-Color-dark-grey {
+  background-color: #6f6b6b;
+}
+
+.col-Color-denim-blue {
+  background-color: #6f8faf;
+}
+
+.col-Color-light-teal {
+  background-color: #6fc7c6;
+}
+
+.col-Color-green {
+  background-color: #717768;
+}
+
+.col-Color-mint-green {
+  background-color: #72cead;
+}
+
+.col-Color-tortoise-shell {
+  background-color: #754734;
+}
+
+.col-Color-dark-khaki {
+  background-color: #79764d;
+}
+
+.col-Color-dark-mauve {
+  background-color: #7b2a2a;
+}
+
+.col-Color-burgundy {
+  background-color: #800020;
+}
+
+.col-Color-mineral-green {
+  background-color: #86a7a6;
+}
+
+.col-Color-denim {
+  background-color: #88b2d8;
+}
+
+.col-Color-khaki {
+  background-color: #8a865d;
+}
+
+.col-Color-purple {
+  background-color: #8b74aa;
+}
+
+.col-Color-khaki-print {
+  background-color: #8b885c;
+}
+
+.col-Color-brick {
+  background-color: #8c373e;
+}
+
+.col-Color-olive {
+  background-color: #8d8b55;
+}
+
+.col-Color-purple-print {
+  background-color: #8e7cc3;
+}
+
+.col-Color-chestnut {
+  background-color: #954535;
+}
+
+.col-Color-warm-brown {
+  background-color: #964b00;
+}
+
+.col-Color-seafoam-green {
+  background-color: #98d1a9;
+}
+
+.col-Color-berry {
+  background-color: #990f4b;
+}
+
+.col-Color-copper-brown {
+  background-color: #994e2e;
+}
+
+.col-Color-plum {
+  background-color: #995176;
+}
+
+.col-Color-golden-brown {
+  background-color: #996515;
+}
+
+.col-Color-mocha {
+  background-color: #9b95ab;
+}
+
+.col-Color-violet {
+  background-color: #9c38c7;
+}
+
+.col-Color-bronze {
+  background-color: #9c7e41;
+}
+
+.col-Color-aqua {
+  background-color: #9ee6f4;
+}
+
+.col-Color-lime {
+  background-color: #9fc131;
+}
+
+.col-Color-light-blue {
+  background-color: #9fc5e8;
+}
+
+.col-Color-steel-blue {
+  background-color: #9fc5e8;
+}
+
+.col-Color-blue {
+  background-color: #a0aabf;
+}
+
+.col-Color-sky-blue {
+  background-color: #c9dff3;
+}
+
+.col-Color-washed-khaki {
+  background-color: #a2bf96;
+}
+
+.col-Color-periwinkle-print {
+  background-color: #a64d79;
+}
+
+.col-Color-dark-rose {
+  background-color: #a85d82;
+}
+
+.col-Color-soft-grey {
+  background-color: #a8b8d0;
+}
+
+.col-Color-gold {
+  background-color: #aa9855;
+}
+
+.col-Color-almond {
+  background-color: #ab784e;
+}
+
+.col-Color-baby-blue {
+  background-color: #abc5e0;
+}
+
+.col-Color-plum {
+  background-color: #ac0272;
+}
+
+.col-Color-chestnut-brown {
+  background-color: #ac7e59;
+}
+
+.col-Color-brown {
+  background-color: #ae8165;
+}
+
+.col-Color-lavender {
+  background-color: #afa4ce;
+}
+
+.col-Color-green-print {
+  background-color: #b0e698;
+}
+
+.col-Color-sage {
+  background-color: #b1bca0;
+}
+
+.col-Color-sage-green {
+  background-color: #b1bca0;
+}
+
+.col-Color-tan {
+  background-color: #b2a090;
+}
+
+.col-Color-dusty-mauve {
+  background-color: #b48b9c;
+}
+
+.col-Color-lilac-grey {
+  background-color: #b4b5c8;
+}
+
+.col-Color-warm-taupe {
+  background-color: #b68e6b;
+}
+
+.col-Color-rust {
+  background-color: #b7410e;
+}
+
+.col-Color-rose-gold {
+  background-color: #b88078;
+}
+
+.col-Color-lime-green {
+  background-color: #b8e2a9;
+}
+
+.col-Color-marled-grey {
+  background-color: #b9b6b6;
+}
+
+.col-Color-olive-print {
+  background-color: #bab86c;
+}
+
+.col-Color-dusty-lilac {
+  background-color: #bbb7c6;
+}
+
+.col-Color-matcha-green {
+  background-color: #bbc561;
+}
+
+.col-Color-vintage-grey {
+  background-color: #bcbcbc;
+}
+
+.col-Color-limestone {
+  background-color: #bebd8f;
+}
+
+.col-Color-camel {
+  background-color: #c19a6b;
+}
+
+.col-Color-pastel-green {
+  background-color: #c1e1c1;
+}
+
+.col-Color-mint {
+  background-color: #c2e5d3;
+}
+
+.col-Color-limited-edition-grey {
+  background-color: #c6c6c8;
+}
+
+.col-Color-taupe {
+  background-color: #c7a194;
+}
+
+.col-Color-periwinkle {
+  background-color: #ccccff;
+}
+
+.col-Color-copper {
+  background-color: #ce8350;
+}
+
+.col-Color-dusky-pink {
+  background-color: #d193a3;
+}
+
+.col-Color-honey {
+  background-color: #d1a054;
+}
+
+.col-Color-magenta {
+  background-color: #d23c77;
+}
+
+.col-Color-rose {
+  background-color: #d2738f;
+}
+
+.col-Color-mauve {
+  background-color: #d489b0;
+}
+
+.col-Color-silver {
+  background-color: #d7dad9;
+}
+
+.col-Color-neutral-print {
+  background-color: #d8a979;
+}
+
+.col-Color-oat {
+  background-color: #d8c29d;
+}
+
+.col-Color-apricot {
+  background-color: #dd9760;
+}
+
+.col-Color-dusty-pink {
+  background-color: #e2a4b1;
+}
+
+.col-Color-heather-oat {
+  background-color: #e2b68f;
+}
+
+.col-Color-bone {
+  background-color: #e3dac9;
+}
+
+.col-Color-dark-yellow {
+  background-color: #e49b0f;
+}
+
+.col-Color-mauve {
+  background-color: #e4adbb;
+}
+
+.col-Color-nude {
+  background-color: #e5d2c4;
+}
+
+.col-Color-caramel {
+  background-color: #e69163;
+}
+
+.col-Color-sky-grey {
+  background-color: #e6e6f0;
+}
+
+.col-Color-dark-pink {
+  background-color: #e75480;
+}
+
+.col-Color-terracotta {
+  background-color: #e96d63;
+}
+
+.col-Color-sand {
+  background-color: #eadcb2;
+}
+
+.col-Color-orange-print {
+  background-color: #eb8a33;
+}
+
+.col-Color-lilac {
+  background-color: #ebdeef;
+}
+
+.col-Color-heather-grey {
+  background-color: #ececec;
+}
+
+.col-Color-grey-marl {
+  background-color: #eeeeee;
+}
+
+.col-Color-warm-peach {
+  background-color: #efd2b5;
+}
+
+.col-Color-beige-print {
+  background-color: #efd7cb;
+}
+
+.col-Color-stone {
+  background-color: #f1e8d7;
+}
+
+.col-Color-bubblegum-pink {
+  background-color: #f296ad;
+}
+
+.col-Color-pink-print {
+  background-color: #f386b3;
+}
+
+.col-Color-blush {
+  background-color: #f4e1db;
+}
+
+.col-Color-candy-pink {
+  background-color: #f5b0bd;
+}
+
+.col-Color-champagne {
+  background-color: #faecd7;
+}
+
+.col-Color-marled-oat {
+  background-color: #faf3e5;
+}
+
+.col-Color-off-white {
+  background-color: #faf9f6;
+}
+
+.col-Color-red {
+  background-color: #fc342a;
+}
+
+.col-Color-fuchsia {
+  background-color: #ff00ff;
+}
+
+.col-Color-neon-pink {
+  background-color: #ff44cc;
+}
+
+.col-Color-hot-pink {
+  background-color: #ff69b4;
+}
+
+.col-Color-coral {
+  background-color: #ff8576;
+}
+
+.col-Color-orange {
+  background-color: #ff911c;
+}
+
+.col-Color-yellow-print {
+  background-color: #ffa363;
+}
+
+.col-Color-peach {
+  background-color: #ffb38e;
+}
+
+.col-Color-light-pink {
+  background-color: #ffb6c1;
+}
+
+.col-Color-pink {
+  background-color: #ffc0cb;
+}
+
+.col-Color-light-orange {
+  background-color: #ffd580;
+}
+
+.col-Color-mustard {
+  background-color: #ffdb58;
+}
+
+.col-Color-multi-print {
+  background-color: #ffdcbb;
+}
+
+.col-Color-yellow-print {
+  background-color: #ffde00;
+}
+
+.col-Color-yellow {
+  background-color: #ffe599;
+}
+
+.col-Color-beige {
+  background-color: #ffeede;
+}
+
+.col-Color-pastel-yellow {
+  background-color: #fff2cc;
+}
+
+.col-Color-oyster-white {
+  background-color: #fff8e3;
+}
+
+.col-Color-ivory {
+  background-color: #fffbf1;
+}
+
+.col-Color-cream {
+  background-color: #fffef2;
+}
+
+.col-Color-lemon {
+  background-color: #ffff9e;
+}
+
+.col-Color-core-white {
+  background-color: #ffffff;
+}
+
+.col-Color-pistachio {
+  background-color: #b1e8d5;
+}
+
+.col-Color-flamingo-pink {
+  background-color: #fc8eac;
+}
+
+.col-Color-electric-blue {
+  background-color: #0652ff;
+}
+
+.col-Color-coral-orange {
+  background-color: #ff7f50;
+}
+
+.col-Color-key-lime {
+  background-color: #aeff6e;
+}
+
+.col-Color-light-green {
+  background-color: #989982;
+}
+
+.col-Color-bamboo-green {
+  background-color: #c6d6bf;
+}
+
+.col-Color-slate-blue {
+  background-color: #7f99c9;
+}
+
+.col-Color-ice-blue {
+  background-color: #d2e7f8;
+}
+
+.col-Color-ecru {
+  background-color: #fffaed;
+}
+
+.col-Color-midnight-black {
+  background-color: #333333;
+}
+
+.col-Color-fiery-red {
+  background-color: #d63c1e;
+}
+
+.col-Color-ballerina-pink {
+  background-color: #eececc;
+}
+
+.col-Color-marigold {
+  background-color: #ffcb81;
+}
+
+.col-Color-light-sage {
+  background-color: #dceed5;
+}
+
+.col-Color-tangerine {
+  background-color: #ff3c10;
+}
+
+.col-Color-fuchsia {
+  background-color: #ff00ff;
+}
+
+.col-Color-baby-pink-print {
+  background-color: #fbddf7;
+}
+
+.col-Color-eggshell {
+  background-color: #f0ead6;
+}
+
+.col-Color-soft-yellow {
+  background-color: #fcefa7;
+}
+
+.col-Color-toffee {
+  background-color: #d09946;
+}
+
+.col-Color-soft-blue {
+  background-color: #c0dcf5;
+}
+
+.col-Color-sand {
+  background-color: #c1a68d;
+}
+
+.col-Color-black {
+  background-color: #000000;
+}
+
+.col-Color-soft-peach {
+  background-color: #ffe9e0;
+}
+
+.col-Color-fire-red {
+  background-color: #f20000;
+}
+
+.col-Color-soft-lavender {
+  background-color: #f7eaff;
+}
+
+.col-Color-teal-green {
+  background-color: #019190;
+}
+
+.col-Color-cocoa-brown {
+  background-color: #633507;
+}
+
+.col-Color-iceberg-green {
+  background-color: #a8c1b4;
+}
+
+.col-Color-warm-grey {
+  background-color: #b3b2b0;
+}
+
+.col-Color-core-black {
+  background-color: #000000;
+}
+
+.col-Color-limited-edition-chocolate {
+  background-color: #93411b;
+}
+
+.col-Color-limited-edition-grey {
+  background-color: #c6c6c8;
+}
