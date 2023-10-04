@@ -32,3 +32,6 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
   .then((productResponse) => {
     console.log(productResponse);
   });
+
+// block-vendor:tapcart
+// block-type:utility-storefront-api-fetch

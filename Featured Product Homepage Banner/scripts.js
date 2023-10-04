@@ -30,3 +30,6 @@ function addToCart() {
       document.querySelector(".add-to-cart").style.background = "transparent";
   },2000)
 }
+
+// block-vendor:tapcart
+// block-type:UI-banner

@@ -5,3 +5,6 @@ script.async = true;
 script.src = "//loox.io/widget/loox.js?shop=YOUR-STORE-HANDLE.myshopify.com";
 document.head.appendChild(script);
 
+// block-vendor:tapcart
+// block-type:reviews-loox
+

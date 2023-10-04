@@ -89,3 +89,5 @@ function clickProduct(id) {
     productId: productId,
   });
 }
+// block-vendor:shopify
+// block-type:product-recommendations

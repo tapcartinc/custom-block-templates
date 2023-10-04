@@ -5,8 +5,6 @@ const selectedVariant = Tapcart.variables.product.selectedVariant.id;
 
 /*
      PRODUCT GROUPING LOGIC
-     - Product grouping is based on the product title i.e "Mid Short Tight - Pride-Black"
-     - The product title is broken up into the main product title and color i.e "Mid Short Tight" & "Pride-Black"
      - The PRODUCT TITLE is then used in a Storefront API fetch call to return products with a particular PRODUCT TAG i.e handle-RepMidShortTight
      - All in all - this product grouping example uses a combination of the PRODUCT TITLE and PRODUCT TAGS
 */

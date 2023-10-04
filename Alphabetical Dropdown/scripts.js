@@ -12,3 +12,6 @@ accordionHeaders.forEach((header) => {
     panel.classList.toggle("active");
   });
 });
+
+// block-vendor:tapcart
+// block-type:utility-accordion-sort

@@ -13,3 +13,6 @@ if (productSummary) {
 if (productReview) {
     productReview.setAttribute('data-product-id', productId);
 }
+
+// block-vendor:tapcart
+// block-type:reviews-junip

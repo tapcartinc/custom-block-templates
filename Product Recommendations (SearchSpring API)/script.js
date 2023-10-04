@@ -40,3 +40,5 @@ fetch(`https://${siteId}.a.searchspring.io/boost/${siteId}/recommend?tags=cross-
   })
   .catch(err => console.error(err.message));
 
+// block-vendor:ssearchspring
+//block-type:product-recommendations

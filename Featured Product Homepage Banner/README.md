@@ -1,7 +1,7 @@
 # Featured Product Banner Block
 
 ## Description
-This block catches a user's attention, and promotres a singular product. From there, a user can add it to the cart, view the product, or view its full collection.
+This block catches a user's attention, and promotes a singular product. From there, a user can add it to the cart, view the product, or view its full collection.
 
 ## How this block works
 1. Uses [addToCart](https://docs.tapcart.com/docs/app-actions) App Action to add the product
