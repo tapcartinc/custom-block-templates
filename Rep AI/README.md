@@ -1,4 +1,4 @@
-# Rep.Ai Chat block
+# Rep AI Chat block
 
 ## Description
 Rep AI is an advanced AI Concierge, powered by ChatGPT, designed to enhance customer engagement and boost sales.
@@ -25,7 +25,7 @@ The integration of Rep AI with Tapcart provides a seamless shopping experience f
 The following lines of code in the custom block will need to be edited for the block to work as expected.
 
 - **[REQUIRED]** 
-- Line 2 (JavaScript File) replace {{Account Key}} with the value provided by Rep.Ai
+- Line 2 (JavaScript File) replace {{Account Key}} with the value provided by Rep AI
 
 ## Block preview
 You'll know your configuration was successful if your video renders in the editor:
