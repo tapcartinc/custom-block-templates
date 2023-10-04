@@ -34,7 +34,7 @@ Import a custom font to conform to your App's design system by pasting a font li
 You'll know your configuration was successful if your block looks like this:
 
 
-<img width="442" alt="Screenshot 2023-08-03 at 4 51 32 PM" src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/17016704/44c89c51-61f2-461b-bdf7-b29ae2785f4b">
+<img width="442" alt="Screenshot 2023-08-03 at 4 51 32 PM" src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/bf4168dc-927e-4e6c-a45d-e909dda1f80e">
 
 
 

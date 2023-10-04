@@ -45,5 +45,5 @@ Import a custom font to conform to your App's design system by pasting a font li
 ## Block preview
 You'll know your configuration was successful if your block is added, then dragged/dropped inside of the PDP and looks like this:
 
-<img width="403" alt="Screenshot 2022-12-05 at 11 18 45 PM" src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/77694650/63c1519e-597d-4077-baf4-a39d83742bd2">
+<img width="403" alt="Screenshot 2022-12-05 at 11 18 45 PM" src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/20531587-7f07-4847-8893-5ffd872c7a51">
 

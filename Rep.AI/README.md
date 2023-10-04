@@ -32,8 +32,8 @@ You'll know your configuration was successful if your video renders in the edito
 
 When collapsed:
 
-<img width="348" alt="Block Preview" src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/77694650/0f79d4bb-4fa9-43fc-b2e0-85103b1b5ca3">
+<img width="348" alt="Block Preview" src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/bae3c722-a08b-44dc-971c-696e72092b0d">
 
 When user clicks chat bubble:
 
-<img width="348" alt="Block Preview" src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/77694650/22689374-2959-4ec9-94da-b0404bcb9906">
+<img width="348" alt="Block Preview" src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/34419392-c4ad-423c-939a-0dc7af1c135f">
