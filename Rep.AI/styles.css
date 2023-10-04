@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .vf-container {
+    height: 71px;
+    width: 70px;
+  }
+  button {
+    margin-bottom: 3em !important;
+  }
