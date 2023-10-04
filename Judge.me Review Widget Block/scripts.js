@@ -13,3 +13,5 @@ var scripts = [
     jdgm.PUBLIC_TOKEN = "";
   }
   
+  // block-vendor:tapcart
+  // block-type:reviews-judge.me

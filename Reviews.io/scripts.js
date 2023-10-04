@@ -181,5 +181,5 @@ new ReviewsWidget('#ReviewsWidget', {
   },
 })
 
-//block-vendor:tapcart
+//block-vendor:reviews.io
 //block-type:reviews-reviews.io

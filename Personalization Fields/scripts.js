@@ -45,3 +45,6 @@ function addToCart() {
         document.querySelector(".add-to-cart").disabled = false;
     }, 2000);
 }
+
+// block-vendor:tapcart
+// block-type:personalization

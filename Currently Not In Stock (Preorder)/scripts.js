@@ -63,3 +63,6 @@ function addToCart(){
         }],
     })
 };
+
+// block-vendor:tapcart
+// block-type:preorder

@@ -73,3 +73,6 @@ if (navigator.geolocation) {
     document.getElementById("output").innerHTML =
         "Geolocation is not supported by your browser.";
 }
+
+// block-vendor:tapcart
+// block-type:geolocation-store-locator

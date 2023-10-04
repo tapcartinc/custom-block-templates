@@ -10,3 +10,6 @@ Tapcart.registerEventHandler("product/updated", (data) => {
     const product = data.product;
     skuFinder(product)
 });
+
+// block-vendor:tapcart
+// block-type:utility-sku-presentation

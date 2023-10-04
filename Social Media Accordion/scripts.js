@@ -5,3 +5,6 @@ accordionHeaders.forEach(header => {
     header.parentElement.classList.toggle('active');
   });
 });
+
+//block-vendor:tapcart
+//block-type:social-media

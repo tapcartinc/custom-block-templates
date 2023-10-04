@@ -15,3 +15,6 @@ console.log(divideByFour(price));
 
 // Update the HTML element with the class "display-price" with the divided price
 document.querySelector(".display-price").innerHTML = divideByFour(price);
+
+// block-vendor:tapcart
+// block-type:afterpay-presentation
