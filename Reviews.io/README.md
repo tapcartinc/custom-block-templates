@@ -35,4 +35,4 @@ The following lines of code in the custom block will need to be edited for the b
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
-<img src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/77694650/dba5c7e8-b975-4fc0-b399-90a0787ae827" alt="block preview" height="500"/>
+<img src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/0ff875a6-00ff-479e-ac20-f107629194f0" alt="block preview" height="500"/>

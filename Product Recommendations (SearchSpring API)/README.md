@@ -35,6 +35,6 @@ Import a custom font to conform to your App's design system by pasting a font li
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
-<img width="406" alt="searchspring-prod" src="https://github.com/Tapcart-Templates/custom-block-templates-internal-dev/assets/17016704/d3ccb7b2-9b27-4050-bf48-771bcf8d461f">
+<img width="406" alt="searchspring-prod" src="https://github.com/Tapcart-Templates/custom-block-templates/assets/77694650/dfd2ce7a-abfa-40c7-9976-4ef86d54684e">
 
 
