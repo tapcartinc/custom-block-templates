@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+h1 {
+  margin: 10px 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+}
+
+/*! CSS Used from: Embedded */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+@media print {
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}
+/*! CSS Used from: Embedded */
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+:focus {
+  outline: 0 transparent;
+}
+.minicart__progress {
+  -ms-flex-pack: distribute;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 13px;
+  justify-content: space-around;
+  margin-top: 10px;
+  position: relative;
+}
+.minicart__progress-label {
+  display: block;
+}
+.minicart__progress-bar {
+  background: #f2fec4;
+  border: 1px solid transparent;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.minicart__progress-bar--wrapper {
+  border: 1px solid #000;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  width: 85% !important;
+}
+::placeholder {
+  color: #929292;
+  opacity: 1;
+}
+/*! CSS Used from: https://www.princesspolly.com.au/cdn/shop/t/223/assets/princess-polly.css?v=102094319822245618801692731879 ; media=all */
+@media all {
+  *,
+  :after,
+  :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  div,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  :focus {
+    outline: transparent 0;
+  }
+  .minicart__progress {
+    border: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 13px;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-top: 10px;
+    position: relative;
+  }
+  .minicart__progress-label {
+    display: block;
+  }
+  .minicart__progress-bar {
+    background: #f2fec4;
+    border: 1px solid transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+  }
+  .minicart__progress-bar--wrapper {
+    border: 1px solid #000;
+    width: 85% !important;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  ::placeholder {
+    color: #929292;
+    opacity: 1;
+  }
+}
+
+.minicart__progress-label {
+  margin-top: -0.9%;
+}
+
+.free-shipping-text {
+  font-size: 14.5px;
+  margin-right: 3%;
+}
+
+.minicart__progress-label,
+.final-amount {
+  font-size: 14.5px !important;
+}
