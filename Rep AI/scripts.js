@@ -1,5 +1,5 @@
 // Rep params to set per merchant
-var partnerKey = "{{Account Key}}"; // Value provided by Rep for example 'betterbeautybeyond' can be used for test
+var partnerKey = "{{Account Key}}"; // Value provided by Rep
 var environment = "prod"; // Value provided by Rep
 
 // Create a script element
