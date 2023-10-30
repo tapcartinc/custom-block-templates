@@ -32,6 +32,12 @@ The following lines of code in the custom block will need to be edited for the b
 
 - **[REQUIRED]** Lines 1 and 2 (JAVASCRIPT) should be replaced by your API key and Domain.
 
+- Line 6 - If you want a single row carousel, type 'true'.  If you prefer double rows, type 'false'
+
+- **[REQUIRED]** Line 9 - replace the currency type to your preferred currency, i.e 'pound' or 'yuan'.  
+    The available currencies are:
+    - "pound", "dollar", "euro", "yen", "yuan", or "won"
+
 ### 5. Add a custom font
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.
 
