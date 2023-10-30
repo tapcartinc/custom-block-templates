@@ -42,10 +42,6 @@ function handleCartUpdate () {
         }${remainingAmount.toFixed(2)} AWAY FROM FREE SHIPPING`;
       }
     } else document.querySelector(".shipping-main-tracker").style.display = "none";
-    Tapcart.actions.showToast({
-      type: "success",
-      message: 'Event occurred: "cart/updated"',
-    });
     
   }
   
