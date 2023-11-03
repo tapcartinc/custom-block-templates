@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    width: 100%;
+}
+
+#test {
+  height: auto;
+}
+
+.lyvecom-stream {
+  min-height: 750px;
+  width: 100%;
+  background-color: #FFEBE1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+    background: transparent; /* Removing the subtle white overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.live-shopping-text {
+  color: #000;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.subtitle-text {
+  color: #F5C4AF;
+   font-weight: bold;
+  font-size: 18px;
+}
+

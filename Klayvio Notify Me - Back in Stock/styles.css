@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+.main {
+  width: 92%;
+  margin: auto;
+}
+
+.add-to-cart,
+#submit-button {
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  background: black;
+  min-width: 100px;
+  width: 100%;
+}
+
+.notify {
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 15px;
+  background: black;
+  min-width: 100px;
+  width: 100%;
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.form_container {
+  padding-top: 7px;
+  width: 100%;
+}
+
+.form_container.inactive {
+  display: none;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 7px;
+  padding: 10px;
+}

@@ -29,7 +29,6 @@ The following lines of code in the custom block will need to be edited for the b
 - We do recommend to set Custom Block SDK Version to v1.4. Some features will not work for older versions. 
 To set the SDK version for a custom block, you need to access the custom block code editor, navigate to Settings, and scroll down to select your preferred SDK version
 
-
 ## Block preview
 You'll know your configuration was successful if your video renders in the editor:
 
