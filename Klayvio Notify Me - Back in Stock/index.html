@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<div class="main">
+  <div class="container" id="variantSelector"></div>
+
+  <div class="container">
+    <button class="add-to-cart" onClick="addToCart()">Add to Cart</button>
+
+    <button class="notify" onClick="emailCapture()" style="display: none"><i class="fa-solid fa-bolt"></i>NOTIFY ME WHEN AVAILABLE</button>
+
+    <div class="form_container inactive">
+      <form onSubmit="klayvioSubmit(event)">
+        <input type="email" id="email-input" placeholder="Email" />
+        <button id="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

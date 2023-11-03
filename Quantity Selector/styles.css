@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}
+
+.counter {
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.counter input {
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: #d8d8d8;
+    color: black;
+    appearance: none;
+    outline: 0;
+}
+.counter span {
+    display: block;
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: black;
+    user-select: none;
+}
+
+  .add-to-cart {
+    border-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    background: black;
+    min-width: 100px;
+    width: 100%;
+  }
+
+.main-atc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
