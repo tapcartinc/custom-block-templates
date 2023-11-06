@@ -1,9 +1,9 @@
 // Rep params to set per merchant
 var partnerKey = "{{Account Key}}"; // Value provided by Rep
 var environment = "prod"; // Value provided by Rep
+var defaultOpen = false; // Should Rep be opened by default
 
 // Create a script element
-
 var script = document.createElement("script");
 var vfP = document.getElementById("vfHolder") || document.head;
 var vfS = document.createElement("script");
@@ -64,10 +64,12 @@ rep.on("load", function () {
     });
 
     // Rep open by default
-    var timout = setTimeout(() => {
-      rep.open();
-      clearTimeout(timout);
-    }, 700);
+    if (defaultOpen) {
+      var timout = setTimeout(() => {
+        rep.open();
+        clearTimeout(timout);
+      }, 700);
+    }
 
     // Rep track product view
   } else {
