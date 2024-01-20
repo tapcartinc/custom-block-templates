@@ -1,4 +1,4 @@
-# Product Recommendations (SearchSpring API)
+# Product Recommendations (Nosto API)
 
 ## Description
 This block allows customers to fetch nosto cart recommendations configured in the Nosto Dashboard. It is typically used to power product carousels in cart.
