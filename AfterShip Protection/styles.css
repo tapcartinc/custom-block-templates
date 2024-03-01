@@ -2,6 +2,5 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
-    "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+    font-family: inherit;
 }
