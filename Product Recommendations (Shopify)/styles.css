@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  -ms-overflow-style: none !important;
+}
+
+.main {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#product-carousel::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#product-carousel {
+  display: flex;
+  flex-direction: column;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 9rem;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+img {
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-title {
+  color: rgb(113, 109, 109);
+  margin-top: 5px;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prices {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  gap: 5px;
+}
+
+.compare {
+  text-decoration: line-through;
+  color: red;
+}
