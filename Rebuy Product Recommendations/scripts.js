@@ -1,6 +1,6 @@
 // Adjust values below per merchant
 // Replace with Merchant API Key
-const apiKey = "dafd5187be5b5ada05f761e64d42fe082068912b";
+const apiKey = "YOUR_API_KEY";
 
 // Recommended AI endpoint
 const endpoint = "/api/v1/products/recommended";
