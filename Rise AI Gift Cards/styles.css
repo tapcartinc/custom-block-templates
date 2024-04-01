@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+  "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.gwbutton {
+  padding: 15px;
+  width: 100%;
+  border-radius: 3px;
+  display: block;
+  font-weight: 300 !important;
+  background: #d52579 !important;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border: 0;
+  text-align: center;
+  font-size: 15px !important;
+}

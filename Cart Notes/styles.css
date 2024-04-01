@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
+.note-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 1rem;
+}
+
+.accordion-panel {
+  display: none;
+}
+
+.accordion-panel.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: inline-block !important;
+  font-size: 0.8rem;
+  border: 1px solid #d3d3d3;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  width: 28%;
+  background: red;
+  color: white;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+label.active {
+  color: black;
+  background: white;
+}
+
+#cartNote {
+  margin-right: 5%;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  font-family: inherit;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: red;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 55%;
+  margin-top: 1rem;
+}
