@@ -1,6 +1,6 @@
 let selectedVariant = Tapcart.variables.product.selectedVariant.id;
 let currency = Tapcart.variables.cart.currency;
-const supportedCurrencies = [];
+const onlyAllowCurrencies = [];
 
 const apiKey = "<YOUR_API_KEY>";
 
@@ -50,8 +50,8 @@ async function updatePreorderButtonForSelectedVariant(newSelectedVariant) {
 
   let state = data.state;
 
-  if (supportedCurrencies.length && state === 'ON_PREORDER') {
-    state = data.state === !supportedCurrencies.includes(currency) ? 'SOLD_OUT' : state;
+  if (onlyAllowCurrencies.length && state === 'ON_PREORDER') {
+    state = data.state === !onlyAllowCurrencies.includes(currency) ? 'SOLD_OUT' : state;
   }
 
 
@@ -85,7 +85,7 @@ preorderButton.addEventListener('click', () => {
   Tapcart.actions.openScreen({
     destination: {
       type: "web",
-      url: `https://www.purpledotprice.com/embedded/placements/checkout/express?apiKey=${apiKey}&variantId=${selectedVariant}&currency=${currency}&noModal=true`
+      url: `https://www.purpledotprice.com/embedded/placements/checkout/express?apiKey=${apiKey}&variantId=${selectedVariant}&currency=${currency}&noModal=true&salesChannel=tapcart`
     }
   });
 });
