@@ -1,39 +1,58 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Helvetica";
-    background: transparent;
-  }
-  
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
-  #waitlist-info {
-    display: none;
-  }
-  
-  .button {
-    display: none;
-    padding: 15px;
-    border-radius: 2px;
-    box-shadow: none;
-    border: none;
-    background: #7f81d6;
-    color: white;
-    font-size: 1em;
-    width: 100%;
-  }
-  
-  
-  #waitlist-dispatch-date {
-    margin-top: 8px;
-    margin-bottom: 5px;
-  }
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+  background: transparent;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#waitlist-info {
+  display: none;
+}
+
+.button {
+  display: none;
+  padding: 15px;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+  background: #7f81d6;
+  color: white;
+  font-size: 1em;
+  width: 100%;
+}
+
+#preorder-button {
+}
+
+#in-stock-button {
+}
+
+#waitlist-dispatch-date {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+:root {
+  --pd-logo-color: #8F17D1;
+}
+
+#pd-logo:before {
+  display: inline-block;
+  position: relative;
+  content: ' ';
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  bottom: 1px;
+  background-color: var(--pd-logo-color);
+}

@@ -1,4 +1,6 @@
 let selectedVariant = Tapcart.variables.product.selectedVariant.id;
+let currency = Tapcart.variables.cart.currency;
+const onlyAllowCurrencies = [];
 
 const apiKey = "<YOUR_API_KEY>";
 
@@ -10,7 +12,10 @@ const learnMoreLink = document.querySelector('#learn-more-link');
 
 learnMoreLink.addEventListener('click', () => {
   Tapcart.actions.openScreen({
-    destination: { type: "web", url: `https://www.purpledotprice.com/embedded-checkout/pre-order-value-prop?hideBackToProduct=true&isAddToPreorder=false&apiKey=${apiKey}&noModal=true` }
+    destination: {
+      type: "web",
+      url: `https://www.purpledotprice.com/embedded-checkout/pre-order-value-prop?hideBackToProduct=true&isAddToPreorder=false&apiKey=${apiKey}&noModal=true&salesChannel=tapcart`
+    }
   });
 });
 
@@ -20,7 +25,7 @@ async function getPreorderStateForVariant(selectedVariant) {
   url.searchParams.set('variant_id', selectedVariant);
 
   const resp = await fetch(url.toString());
- 
+
   const data = await resp.json();
 
   if (resp.ok) {
@@ -41,7 +46,16 @@ async function getPreorderStateForVariant(selectedVariant) {
 async function updatePreorderButtonForSelectedVariant(newSelectedVariant) {
   selectedVariant = newSelectedVariant;
 
-  const { state, dispatchDate }  = await getPreorderStateForVariant(selectedVariant);
+  const data = await getPreorderStateForVariant(selectedVariant);
+
+  let state = data.state;
+
+  if (onlyAllowCurrencies.length && state === 'ON_PREORDER') {
+    state = data.state === !onlyAllowCurrencies.includes(currency) ? 'SOLD_OUT' : state;
+  }
+
+
+  const dispatchDate = data.dispatchDate;
 
   document.querySelector("#preorder-button").style.display =
     state === "ON_PREORDER" ? "block" : "none";
@@ -69,7 +83,10 @@ Tapcart.registerEventHandler("product/updated", async (eventData) => {
 
 preorderButton.addEventListener('click', () => {
   Tapcart.actions.openScreen({
-    destination: { type: "web", url: `https://www.purpledotprice.com/embedded/placements/checkout/express?apiKey=${apiKey}&variantId=${selectedVariant}&noModal=true` }
+    destination: {
+      type: "web",
+      url: `https://www.purpledotprice.com/embedded/placements/checkout/express?apiKey=${apiKey}&variantId=${selectedVariant}&currency=${currency}&noModal=true&salesChannel=tapcart`
+    }
   });
 });
 
