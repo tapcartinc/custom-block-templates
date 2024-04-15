@@ -1,9 +1,10 @@
-wrapWithErrorTracking(() => {
-  let selectedVariant = Tapcart.variables.product.selectedVariant.id;
-  let currency = Tapcart.variables.cart.currency;
-  const onlyAllowCurrencies = [];
+let selectedVariant = Tapcart.variables.product.selectedVariant.id;
+let currency = Tapcart.variables.cart.currency;
+const onlyAllowCurrencies = [];
 
-  const apiKey = "<YOUR_API_KEY>";
+const apiKey = "<YOUR_API_KEY>";
+
+wrapWithErrorTracking(() => {
 
   const instockButton = document.querySelector('#in-stock-button');
   const preorderButton = document.querySelector('#preorder-button');
@@ -34,14 +35,15 @@ wrapWithErrorTracking(() => {
         state: data.data.state,
         dispatchDate: data.data.waitlist.display_dispatch_date,
       };
+    } else {
+      void captureError({
+        message: `Failed to fetch preorder state for variant ${selectedVariant}`,
+      });
+
+      return {
+        state: 'SOLD_OUT',
+      };
     }
-
-    Tapcart.actions.showToast({
-      type: "error",
-      message: `State response from Purple Dot backend: Error!`,
-    });
-
-    return null;
   }
 
   async function updatePreorderButtonForSelectedVariant(newSelectedVariant) {
@@ -139,6 +141,6 @@ async function captureError(error) {
       keepalive: true,
     });
   } catch (err) {
-    console.error('Error while trying to log an error!', err);
+    console.error('Error while trying to log an error!', err.message);
   }
 }
