@@ -1,7 +1,7 @@
 const STOREFRONT_ACCESS_TOKEN = 'Storefront Access Token Goes Here'
 const storeDomain = 'Store Name Goes Here'
 
-const GRAPHQL_URL = `https://${storeDomain}.myshopify.com/api/2022-10/graphql.json`
+const GRAPHQL_URL = `https://${storeDomain}.myshopify.com/api/2024-04/graphql.json`
 const productId = Tapcart.variables.product.id
 
 

@@ -24,7 +24,7 @@ function checkStock(){
     console.log(nodeId);
     
     
-    fetch('https://{{Store Name Goes Here}}.myshopify.com/api/2023-01/graphql.json', {
+    fetch('https://{{Store Name Goes Here}}.myshopify.com/api/2024-04/graphql.json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

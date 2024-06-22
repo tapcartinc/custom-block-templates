@@ -1,5 +1,5 @@
 const STOREFRONT_ACCESS_TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-const GRAPHQL_URL = "https://kenyons-tapcart-boutique.myshopify.com/api/2022-10/graphql.json";
+const GRAPHQL_URL = "https://kenyons-tapcart-boutique.myshopify.com/api/2024-04/graphql.json";
 const productIds = `["gid://shopify/Product/7444358463640"]`;
 const productQuery = () => `
   query {

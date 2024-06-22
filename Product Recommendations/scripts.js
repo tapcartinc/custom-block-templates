@@ -1,5 +1,5 @@
 const STOREFRONT_ACCESS_TOKEN = '{{Storefront Access Token Goes Here}}'
-const GRAPHQL_URL = '{{Store Name Goes Here}}.myshopify.com/api/2022-10/graphql.json'
+const GRAPHQL_URL = '{{Store Name Goes Here}}.myshopify.com/api/2024-04/graphql.json'
 const productId = Tapcart.variables.product.id
 
 // Change singleRow to true to display the product recommendations in a single row

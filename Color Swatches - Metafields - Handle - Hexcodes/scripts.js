@@ -1,6 +1,6 @@
 const shopStore = 'STORE NAME GOES HERE'
 const STOREFRONT_ACCESS_TOKEN = 'STOREFRONT API TOKEN'
-const GRAPHQL_URL = `https://${shopStore}.myshopify.com/api/2023-01/graphql.json`
+const GRAPHQL_URL = `https://${shopStore}.myshopify.com/api/2024-04/graphql.json`
 
 /*
      PRODUCT GROUPING LOGIC

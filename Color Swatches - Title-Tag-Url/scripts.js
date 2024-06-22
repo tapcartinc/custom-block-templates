@@ -33,7 +33,7 @@ const productTitleWithoutSpaces = productTitle.replace(/\s/g, "");
   const titleColor = colorName;
 
   const STOREFRONT_ACCESS_TOKEN = accessToken;
-  const GRAPHQL_URL = `https://${shopifyStore}.myshopify.com/api/2023-01/graphql.json`;
+  const GRAPHQL_URL = `https://${shopifyStore}.myshopify.com/api/2024-04/graphql.json`;
 
   const productQuery = `
     query searchProducts($query: String!) {
