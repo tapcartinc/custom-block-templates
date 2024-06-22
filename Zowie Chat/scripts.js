@@ -3,7 +3,7 @@
     const divElement = document.createElement("div");
     divElement.id = divId;
   
-    // Retrieve your instanceId and subdomain from Zowie
+    // Retrieve your instanceId and subdomain from the Zowie admin panel
     const subdomain = "your-subdomain";
     const instanceId = "xxxxxxxxxxxxxxxxxxxxxxxxx";
   

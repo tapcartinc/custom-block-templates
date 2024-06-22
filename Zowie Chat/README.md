@@ -23,8 +23,8 @@ Zowie's AI chat integration with Tapcart enhances Shopify stores by enabling a s
 
 ### 3. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
-- <span style="color: yellow">**[REQUIRED]**</span> (line 7) JAVASCRIPT - replace your-subdomain with your subdomain retrieved from Zowie
-- <span style="color: yellow">**[REQUIRED]**</span> (line 8) JAVASCRIPT - replace with your instanceId retrieved from Zowie
+- <span style="color: yellow">**[REQUIRED]**</span> (line 7) JAVASCRIPT - replace your-subdomain with your subdomain retrieved from the Zowie admin panel
+- <span style="color: yellow">**[REQUIRED]**</span> (line 8) JAVASCRIPT - replace with your instanceId retrieved from the Zowie admin panel
 
 ### 4. Create a Multi-Page Chat tab
 
