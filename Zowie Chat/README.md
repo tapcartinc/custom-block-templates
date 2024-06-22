@@ -55,7 +55,7 @@ Alternatively, you can create a block-based custom screen to pull in the chat ex
 
 
 ## How this block works
-Your users interact with Zowie in-app, by opening chat and typing their question. They get their chat widget experience as a custom block.
+Zowie’s integration with Tapcart enables brands to leverage Zowie’s customer experience platform to provide proactive, automated buying assistance and deliver best-in-class support directly within their Tapcart-powered app.
 
 
 ## Block preview
