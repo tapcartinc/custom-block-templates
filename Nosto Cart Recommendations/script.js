@@ -26,33 +26,48 @@ fetch(url, {
   .then((data) => {
     const sessionId = data.data.newSession;
 
+    let cartItems = Tapcart.variables.cart.items.map((item) => {
+      return {
+        productId: item.productId,
+        priceCurrencyCode: Tapcart.variables.cart.currency,
+        quantity: item.quantity,
+      };
+    }); 
+    
+    const cartItemsFormatted = cartItems.map(item => `{ productId: "${item.productId}", priceCurrencyCode: "${item.priceCurrencyCode}", quantity: ${item.quantity} }`).join(', ');
+
     const productsBody = JSON.stringify({
       query: `mutation {
-  updateSession(by: BY_CID, id: "${sessionId}",
-    params: {
-      event: {
-        type: VIEWED_PAGE
-        target: "cart"
-      }
-    }
-  ) {
-    pages {
-      forCartPage(params: {
-        isPreview: false, imageVersion:  VERSION_8_400_400, slotIds: ["${slotId}"]
-      }, value: 100) {
-        divId
-        resultId
-        primary {
-          productId
-          name
-          imageUrl
-          price
-            }
-          }
-        }
-      }
-    }`,
-    });
+                updateSession(
+                  by: BY_CID
+                  id: "${sessionId}"
+                  params: {
+                    event: { type: VIEWED_PAGE, target: "cart" }
+                    cart: { items: [${cartItemsFormatted}] }
+                  }
+                ) {
+                  pages {
+                    forCartPage(
+                      params: {
+                        isPreview: false
+                        imageVersion: VERSION_8_400_400
+                        slotIds: ["${slotId}"]
+                      }
+                      value: 100
+                    ) {
+                      divId
+                      resultId
+                      primary {
+                        productId
+                        name
+                        imageUrl
+                        price
+                      }
+                    }
+                  }
+                }
+              }`,
+      });
 
     return fetch(url, {
       method: "POST",
@@ -73,7 +88,7 @@ fetch(url, {
       placeholder.innerHTML = `
         <div onclick="clickProduct('${product.productId}')">
           <img src='${product.imageUrl}' alt='Product 1'>
-          <p>$${rawPriceString}.00</p>
+          <p>$${rawPriceString}</p>
           <p class="productName">${product.name}</h3>
         </div>`;
       let row = row1;

@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+.tapcart-entry-card {
+  width: 100%;
+  text-align: center;
+}
+
+.entries-container {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.total-entries {
+  display: inline-flex;
+  background: rgb(238 238 238 / 80%);
+  padding: 5px 10px;
+  height: 40px;
+}
+
+.total-entries i {
+  color: #119211;
+  padding: 4px 15px;
+  font-size: 16px;
+}
+.total-entries img {
+  width: 100%;
+  max-width: 25px;
+  margin-right: 5px;
+}
+
+.multiplier-number {
+  display: inline-flex;
+  align-items: center;
+  background: var(--green);
+  font-size: 16px;
+  line-height: 20px;
+  padding: 6px;
+  height: 40px;
+}
+.label-area {
+  padding: 0px 5px 0px 5px;
+}
+.entries-number,
+.label-area {
+  display: inline-flex;
+  align-items: center;
+  color: #000;
+  font-size: 16px;
+  padding-top: 2px;
+}
