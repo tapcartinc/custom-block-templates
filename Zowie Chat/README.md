@@ -61,6 +61,7 @@ Your users interact with Zowie in-app, by opening chat and typing their question
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
 
-<p align="center">
-  <img width="40%" alt="Tapcart app" src="https://github.com/tapcartinc/custom-block-templates/assets/77694650/748ca29e-4d26-4b06-a8d7-fa1d576d59e0">
-</p>
+<div align=center>
+  <img width="40%" style="margin-right: 3rem;"alt="Tapcart app" src="https://github.com/tapcartinc/custom-block-templates/assets/77694650/e6db74b2-5be1-43f4-ac25-08954bf428df">
+  <img width="40%" alt="Tapcart app" src="https://github.com/tapcartinc/custom-block-templates/assets/77694650/154dfb3c-0ba8-4118-a5d5-00f983b04d59">
+</div>
