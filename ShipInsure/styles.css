@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.si-container {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Widgets CSS */
+
+/* Import fonts so it's the same across all sites (most sites probably have these, but I'm doing this as a fail safe) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+/* General widget css */
+.shipinsure {
+    width: 100%;
+}
+
+.si-widget {
+    transition: max-width 0.5s ease, margin-right 0.5s ease;
+    max-width: 100%;
+    /* Ensure an initial value is set */
+    margin-right: 0;
+    /* Ensure an initial value is set */
+    margin-left: 0;
+}
+
+.si-widget .si-widget-container {
+    font-family: 'Open Sans', Helvetica, Arial, Roboto, Lato, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.si-widget .si-widget-flex-column {
+    display: flex;
+}
+
+.si-widget .si-header .infoLink,
+.si-widget .si-header .infoPopupTag {
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+}
+
+.si-widget .si-disclaimer {
+    display: none;
+    color: rgba(6, 0, 30, 0.50);
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    padding-bottom: 10px;
+    margin-top: -5px;
+    width: 298px;
+    text-align: start;
+}
+
+.si-widget.info-link .si-disclaimer .infoLink {
+    display: inline;
+    text-decoration: none;
+    color: inherit;
+    white-space: normal;
+}
+
+.si-widget .si-logo {
+    width: 28.5px;
+    height: 46px;
+    margin-top: -1px;
+}
+
+.si-logo-rect {
+    fill: #06001E !important;
+}
+
+.si-logo-stroke {
+    stroke: #06001E;
+    fill: none !important;
+}
+
+.si-logo-fill {
+    fill: white !important;
+    color: transparent;
+}
+
+.si-header>.si-leaf-icon>path {
+    fill: green !important;
+}
+
+.si-widget .si-text-container {
+    padding-left: 6px;
+}
+
+.si-widget .si-header {
+    color: #06001E;
+    font-family: 'Montserrat', 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26.377px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.si-widget .si-sub-header {
+    color: rgba(6, 0, 30, 0.50);
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    width: fit-content;
+    margin-top: -3px;
+}
+
+.si-widget .infoLink,
+.si-widget.info-link .infoPopupTag {
+    display: none;
+}
+
+.si-widget.info-link .infoLink {
+    display: block;
+}
+
+.si-widget.info-link .si-header .infoLink {
+    display: none;
+}
+
+.si-widget .infoPopupTag,
+.si-widget .infoLink {
+    cursor: pointer;
+}
+
+.si-widget .si-sub-header>span {
+    font-size: 8px;
+    position: absolute;
+    top: 0px;
+    padding-left: 2px;
+}
+
+.si-widget .si-switch-and-price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1px;
+}
+
+.si-widget .si-switch-and-price-container .shipinsureAmount {
+    color: #06001E;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    margin-right: 2px;
+}
+
+
+/* Switch styling */
+.si-widget .switch {
+    display: block;
+    margin: 12px auto;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 34px;
+    height: 18px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    flex: 0 0 31px;
+    padding: 0px;
+    margin: 1.5px 0px -14px 0px;
+    background-color: transparent;
+}
+
+.si-widget .switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.si-widget .switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #E3E8F5;
+    -moz-border-radius: inherit;
+    -webkit-border-radius: inherit;
+    border-radius: inherit;
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+    -webkit-transition-property: opacity background border;
+    -moz-transition-property: opacity background border;
+    -o-transition-property: opacity background border;
+    transition-property: opacity background border;
+}
+
+.si-widget .switch-label::before,
+.si-widget .switch-label::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    font-size: 14px;
+}
+
+.si-widget .switch-label::before {
+    content: attr(data-off);
+    right: 11px;
+    color: #000;
+}
+
+.si-widget .switch-label::after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    opacity: 0;
+}
+
+.si-widget .switch-input:checked~.switch-label {
+    background: #6675FF;
+}
+
+.si-widget .switch-input:checked~.switch-label::before {
+    opacity: 0;
+}
+
+.si-widget .switch-input:checked~.switch-label::after {
+    opacity: 1;
+}
+
+.si-widget .switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out
+}
+
+.si-widget .switch-handle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #f9f9f9;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    background-image: -webkit-linear-gradient(top, #D3D3D3, D3D3D3);
+    background-image: -moz-linear-gradient(top, #D3D3D3, D3D3D3);
+    background-image: -o-linear-gradient(top, #D3D3D3, D3D3D3);
+    background-image: linear-gradient(to bottom, #D3D3D3, D3D3D3);
+}
+
+.si-widget .switch-input:checked~.switch-handle {
+    top: 4px;
+    left: 20px;
+}
+
+/* WIDGET CUSTOMIZATION OPTIONS */
+
+/* Disclaimer */
+.si-widget.disclaimer .si-disclaimer {
+    display: block;
+}
+
+.si-widget.disclaimer .si-sub-header {
+    display: none;
+}
+
+.si-widget.disclaimer .si-text-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Minimal */
+.si-widget.minimal .si-sub-header {
+    display: none;
+}
+
+.si-widget.minimal .si-text-container {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.si-widget.minimal .si-logo {
+    width: 17px;
+    height: 29px;
+}
+
+.si-widget.minimal .si-header {
+    font-size: 17px;
+}
+
+.si-widget.minimal .si-switch-and-price-container {
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
+.si-widget.minimal .si-leaf-icon,
+.si-widget.minimal.info-link .si-header .infoPopupTag {
+    display: none;
+}
+
+.si-widget.minimal.info-link .si-header .infoLink,
+.si-widget.minimal .si-header .infoPopupTag {
+    display: block;
+    font-size: 9px;
+}
+
+.si-widget.minimal .switch {
+    margin: 0px;
+}
+
+.si-widget.minimal .switch-input:checked~.switch-handle {
+    left: 17px;
+}
+
+/* Dark Mode */
+.si-widget.darkmode .si-header {
+    color: white;
+}
+
+.si-widget.darkmode .si-switch-and-price-container .shipinsureAmount {
+    color: white;
+}
+
+.si-widget.darkmode .si-sub-header {
+    color: rgba(255, 255, 255, 0.60)
+}
+
+.si-widget.darkmode .si-logo-rect {
+    fill: white !important;
+}
+
+.si-widget.darkmode .si-logo-stroke {
+    stroke: white;
+    fill: none !important;
+}
+
+.si-widget.darkmode .si-logo-fill {
+    fill: #06001E !important;
+}
+
+.si-widget.disclaimer.darkmode .si-disclaimer {
+    color: rgba(255, 255, 255, 0.60)
+}
+
+#ShipInsureWidget {
+    width: 100%;
+}
+
+/* Hide product (copy this block) */
+/*----- */
+/* ShipInsure */
+[data-vendor="ShipInsure"] {
+    display: none !important;
+}
+
+.product-shipinsure {
+    display: none !important;
+}
+
+/* RESPONSIVE */
