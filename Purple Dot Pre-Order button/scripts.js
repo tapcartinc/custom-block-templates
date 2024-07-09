@@ -4,6 +4,8 @@ const onlyAllowCurrencies = [];
 
 const apiKey = "<YOUR_API_KEY>";
 
+let releaseId = '';
+
 wrapWithErrorTracking(() => {
 
   const instockButton = document.querySelector('#in-stock-button');
@@ -34,6 +36,7 @@ wrapWithErrorTracking(() => {
       return {
         state: data.data.state,
         dispatchDate: data.data.waitlist.display_dispatch_date,
+        releaseId: data.data.waitlist.id
       };
     } else {
       void captureError({
@@ -57,8 +60,9 @@ wrapWithErrorTracking(() => {
       state = data.state === !onlyAllowCurrencies.includes(currency) ? 'SOLD_OUT' : state;
     }
 
-
     const dispatchDate = data.dispatchDate;
+
+    releaseId = data.releaseId ?? '';
 
     document.querySelector("#preorder-button").style.display =
       state === "ON_PREORDER" ? "block" : "none";
@@ -88,7 +92,7 @@ wrapWithErrorTracking(() => {
     Tapcart.actions.openScreen({
       destination: {
         type: "web",
-        url: `https://www.purpledotprice.com/embedded/placements/checkout/express?apiKey=${apiKey}&variantId=${selectedVariant}&currency=${currency}&noModal=true&salesChannel=tapcart`
+        url: `https://www.purpledotprice.com/embedded-checkout/pre-order-checkout?apiKey=${apiKey}&variantId=${selectedVariant}&releaseId=${releaseId}&currency=${currency}&noModal=true&salesChannel=tapcart`
       }
     });
   });
