@@ -34,6 +34,10 @@ The following lines of code in the custom block will need to be edited for the b
 ## How this block works
 The User simply toggles on or off the switch on the thin banner-style block that says Shipping Protection.  This will either add a ShipInsure product to the cart or remove it.  
 
+## Considerations
+Merchants have the ability to configure the widget to be Opt-In or Opt-Out.
+Opt-In means that the customer will have to toggle the switch on to have coverage
+Opt-Out means that the coverage will automatically be added and the customer must toggle off to decline (remove the product from the cart)
 
 ## Block preview
 You'll know your configuration was successful if your block looks like this:
