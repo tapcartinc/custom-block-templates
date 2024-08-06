@@ -44,4 +44,4 @@ The Video ID can be obtained from the video URL. For example, if the URL is **ti
 
 You'll know your configuration was successful if your video renders in the editor:
 
-<img width="403" alt="Screenshot 2022-12-05 at 11 18 45 PM" src="https://user-images.githubusercontent.com/15990327/205846338-368cea39-5224-4dc7-929a-096b39570d5e.png">
+<img width="403" alt="Custom Block Screenshot" src="https://github.com/user-attachments/assets/97f0f7b1-7ae5-4ff9-ae24-5175ae0c6251">
