@@ -12,7 +12,7 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 ## Setup Instructions
 > Reach out to your Tapcart rep if you have any questions while configuring this Custom Block
 
-### 1. Enable Platform-independent Review Widgets from Shopify Admin 
+### 1. !!IMPORTANT!! Enable Platform-independent Review Widgets from Shopify Admin 
 1. Go to your JudgeMe app in Shopify Admin
 2. In your JudgeMe app go to Settings > Integrations > Developers > Platform-independent Review Widgets
 3. Enable the toggle.  
@@ -31,9 +31,9 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 ### 4. Make some code edits
 The following lines of code in the custom block will need to be edited for the block to work as expected. 
 
-- **[REQUIRED]** Line 11 (JAVASCRIPT)) should be replaced by your DOMAIN
+- **[REQUIRED]** Line 1 (JAVASCRIPT)) should be replaced by your DOMAIN
 
-- **[REQUIRED]** Line 13 (JAVASCRIPT) should be replaced by your API key
+- **[REQUIRED]** Line 2 (JAVASCRIPT) should be replaced by your PUBLIC TOKEN
 
 ### 4. Add a custom font
 Import a custom font to conform to your App's design system by pasting a font link in the 'Import Fonts' field in the 'Settings' tab of the [Custom Blocks Editor](https://app.tapcart.com/custom-blocks). From here, the font will need to be referrenced using `font-family` in your CSS.

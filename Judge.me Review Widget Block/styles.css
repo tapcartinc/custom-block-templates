@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0 2px;
     margin: 0;
-    font-family: Helvetica;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
 }
 
 h1 {
