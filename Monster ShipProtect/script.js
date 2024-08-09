@@ -17,6 +17,7 @@ const MY_SHOPIFY_URL = 'YOUR-SHOP-ID.myshopify.com';
 // !! dev
 const container = document.querySelector('#container');
 // If this array contains any device IDs, the block will ONLY display for THOSE devices.
+// If the array is empty, it will display for ALL devices.
 const DEV_DEVICE_IDS = [];
 
 const shouldHide = Boolean(
