@@ -48,4 +48,4 @@ Import a custom font to conform to your App's design system by pasting a font li
 
 You'll know your configuration was successful if your block looks like this:
 
-<img src="https://imgur.com/cb731ba1-4232-4914-bdef-ea566a962bdd" alt="ShipProtect widget"/>
+<img width="500" src="https://github.com/user-attachments/assets/9e3bff4b-e299-4df0-bd3a-5ea84b7da572" alt="ShipProtect widget"/>
