@@ -19,10 +19,9 @@ const container = document.querySelector('#container');
 // If this array contains any device IDs, the block will ONLY display for THOSE devices.
 const DEV_DEVICE_IDS = [];
 
-container.style.display =
-    DEV_DEVICE_IDS.length && DEV_DEVICE_IDS.includes(Tapcart.variables.device.id)
-        ? 'block'
-        : 'none';
+const shouldHide = Boolean(
+    DEV_DEVICE_IDS.length && !DEV_DEVICE_IDS.includes(Tapcart.variables.device.id)
+);
 // !! dev
 
 const SHIPPROTECT_WIDGET_SCRIPT =
@@ -223,6 +222,11 @@ const cart = {
 };
 
 async function main() {
+    if (shouldHide) {
+        container.style.display = 'none';
+        return;
+    }
+
     // Before injecting the script, begin listening for requests on the page, made by the widget
     requestInterceptor({
         intercept: {
