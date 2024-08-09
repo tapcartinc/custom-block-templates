@@ -4,9 +4,8 @@ const storeDomain = 'Store Name Goes Here'
 const GRAPHQL_URL = `https://${storeDomain}.myshopify.com/api/2024-04/graphql.json`
 const productId = Tapcart.variables.product.id
 
-
 // Change singleRow to true to display the product recommendations in a single row
-let singleRow = true;
+let singleRow = true
 
 // Type either "pound", "dollar", "euro", "yen", "yuan", or "won" to change the currency symbol
 let currency = 'dollar'
@@ -105,9 +104,8 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
           <p class="product-title">${product.title}</p>
           <div class="prices">
             <p class="price">${currencySymbol}${priceNum}</p> ${
-        compareAtPrice && compareAtPrice.amount !== '0.0'
-          ? `<p 
-             class="compare">${currencySymbol}${compareAtPriceNum}</p>`
+        compareAtPrice && compareAtPrice.amount !== '0.0' && compareAtPrice.amount !== priceNum
+          ? `<p class="compare">${currencySymbol}${compareAtPriceNum}</p>`
           : ''
       }
         </div>`
