@@ -59,3 +59,7 @@ Import a custom font to conform to your App's design system by pasting a font li
 ## Block preview
 
 You'll know your configuration was successful if your block renders in the editor:
+
+<img width="300" src="https://github.com/user-attachments/assets/3fcda67e-ff5a-422a-ae18-858a045849de" alt="Size Guide Custom Block"/>
+
+<img width="300" src="https://github.com/user-attachments/assets/57457351-ad3f-4758-addc-830ca629b15d" alt="Size Guide Custom Block - Expanded"/>
