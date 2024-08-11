@@ -25,7 +25,6 @@
 
 #header {
     display: flex;
-    gap: 5px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -33,42 +32,44 @@
 }
 
 #options {
-    padding: 10px;
-    border-radius: 1.5em;
-    gap: 10px;
-    flex: 0.75;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     background: var(--optionsBox);
+    border-radius: 1.5em;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
+/* Option Wrapper */
 #options > label {
-    flex: 0.5;
-    display: flex;
-    justify-content: center;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    height: 30px;
+    min-width: 40px;
+    border-radius: 1.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Option display */
+#options > label > input + div {
+    background: var(--option);
+    color: var(--optionText);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#options > label > input:checked + div {
+    background: var(--selectedOption);
+    color: var(--selectedOptionText);
 }
 
 #options > label > input {
     appearance: none;
-}
-
-#options > label > input + span {
-    padding: 5px;
-    border-radius: 1.5em;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--option);
-    color: var(--optionText);
-}
-
-#options > label > input:checked + span {
-    background: var(--selectedOption);
-    color: var(--selectedOptionText);
 }
 
 #content {

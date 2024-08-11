@@ -34,7 +34,7 @@ const shouldHide =
     !Tapcart.variables.product ||
     !Object.keys(CONFIG.options).length;
 
-const OPTION_NAME = 'size-unit-option';
+const FORM_OPTION_NAME = 'size-unit-option';
 
 const header = document.querySelector('#header');
 const content = document.querySelector('#content');
@@ -57,7 +57,7 @@ const render = {
             optionControl.for = `option-${option}`;
 
             const optionInput = document.createElement('input');
-            optionInput.name = OPTION_NAME;
+            optionInput.name = FORM_OPTION_NAME;
             optionInput.type = 'radio';
             optionInput.id = optionControl.for;
             optionInput.value = option;
@@ -78,21 +78,30 @@ const render = {
 };
 
 function main() {
-    if (shouldHide) {
+    const { metafields } = Tapcart.variables.product;
+    const availableSizeOptions = Object.keys(CONFIG.options).filter((key) =>
+        Boolean(metafields?.[CONFIG.options[key].namespace]?.[CONFIG.options[key].name])
+    );
+
+    if (shouldHide || !availableSizeOptions.length) {
         container.style.display = 'none';
         return;
     }
 
-    const { metafields } = Tapcart.variables.product;
-
     render.title(metafields[CONFIG?.title?.namespace]?.[CONFIG?.title?.name]);
-    render.options(Object.keys(CONFIG.options));
+    render.options(availableSizeOptions);
+
+    // If there is only one radio option, form.name will just be a single element.
+    const radioNodes =
+        optionsForm[FORM_OPTION_NAME] instanceof RadioNodeList
+            ? [...optionsForm[FORM_OPTION_NAME]]
+            : [optionsForm[FORM_OPTION_NAME]];
 
     let selectedOption = null;
 
-    [...optionsForm[OPTION_NAME]].forEach((elem) => {
+    radioNodes.forEach((elem) => {
         elem.addEventListener('click', (e) => {
-            const optionName = optionsForm[OPTION_NAME].value;
+            const optionName = optionsForm[FORM_OPTION_NAME].value;
 
             // Handle deselection
             if (selectedOption === optionName) {
