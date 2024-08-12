@@ -1,6 +1,6 @@
 # Cart Addon Button
 
-This block is tied to a particular **Variant ID**, configured by you.
+This block is tied to a particular **Variant ID**, configured by you. This ID must be a variant ID, even if the product has only one variant.
 
 Once the addon button is clicked, your item is added to the user's cart, and the button disappears. If the user removes the item from their cart, the button will re-appear. If the user already has the item in their cart, the button will not appear at all.
 
