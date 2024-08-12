@@ -66,4 +66,4 @@ function main() {
     );
 }
 
-window.addEventListener('message', main, { once: true });
+main();
