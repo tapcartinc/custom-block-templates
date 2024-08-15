@@ -4,6 +4,7 @@
     margin: 0;
     font-family: Helvetica;
     -webkit-tap-highlight-color: transparent;
+    color: black;
 }
 
 #root {
@@ -14,6 +15,7 @@
 
 #root.expanded {
     max-height: 100px;
+    padding: 10px 5px;
 }
 
 button {
