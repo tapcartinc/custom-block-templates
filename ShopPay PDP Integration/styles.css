@@ -1,6 +1,6 @@
 :root {
     --textColor: #585858;
-    --fontSize: 0.65em;
+    --fontSize: 0.75em;
 }
 
 * {
@@ -11,7 +11,9 @@
 }
 
 #container {
-    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #container.hidden {
@@ -25,6 +27,6 @@
 }
 
 #container > #banner > img {
-    height: 1.05em;
+    height: 1.1em;
     vertical-align: middle;
 }
