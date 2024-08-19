@@ -114,7 +114,6 @@ async function main() {
     if (!collectionHandle) return;
 
     const { data } = await getCollectionProducts({ handle: collectionHandle });
-    console.log(data);
     data.collection.products.edges.map(({ node: { featuredImage, id } }) =>
         renderOption({
             imageUrl: featuredImage.url,
