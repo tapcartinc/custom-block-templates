@@ -18,6 +18,11 @@ const util = {
 // If this array contains any device IDs, the block will ONLY display for THOSE devices.
 // If the array is empty, it will display for ALL devices.
 const DEV_DEVICE_IDS = [];
+
+const shouldHide = Boolean(
+    (DEV_DEVICE_IDS.length && !DEV_DEVICE_IDS.includes(Tapcart.variables.device.id)) ||
+        !Tapcart.variables.product
+);
 // !! dev
 
 const container = document.querySelector('#container');
@@ -102,11 +107,6 @@ const renderOption = ({ imageUrl, productId }) => {
 };
 
 async function main() {
-    const shouldHide = Boolean(
-        (DEV_DEVICE_IDS.length && !DEV_DEVICE_IDS.includes(Tapcart.variables.device.id)) ||
-            !Tapcart.variables.product
-    );
-
     if (shouldHide) return;
 
     // Grab the collection that holds all products in the group
