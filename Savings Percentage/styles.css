@@ -1,0 +1,20 @@
+:root {
+    --color: #d91e18;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+#container {
+    color: var(--color);
+    font-size: 0.75em;
+    padding: 0px 0px 0px 15px;
+}
+
+#container.hidden {
+    display: none;
+}
