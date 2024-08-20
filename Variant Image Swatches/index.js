@@ -9,7 +9,9 @@ const DEV_DEVICE_IDS = [];
 
 const shouldHide = Boolean(
     (DEV_DEVICE_IDS.length && !DEV_DEVICE_IDS.includes(Tapcart.variables.device.id)) ||
-        !Tapcart.variables.product
+        !Tapcart.variables.product ||
+        // Only render if the active product has the target option
+        !Tapcart.variables.product.options?.some(({ name }) => name === OPTION_NAME)
 );
 // !! dev
 
