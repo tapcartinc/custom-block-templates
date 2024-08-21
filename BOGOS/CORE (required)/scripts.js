@@ -1,10 +1,10 @@
-// Configure the following variables with your own values
+// Configure your Shopify domain and API Key
 
 // You can find your store domain name in your Shopify admin under Online Store > Domains
 const shopDomain = 'YOUR SHOPIFY DOMAIN'; // e.g 'bogos-tapcart-integration.myshopify.com';
 
 //Replace with API Key. Please contact support from Bogos to to receive key
-const apiKey = 'YOUR API KEY';
+const apiKey = "YOUR API KEY HERE";
 
 // Do not make changes below this line // 
 

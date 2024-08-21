@@ -4,7 +4,7 @@
 const shopDomain = "YOUR SHOPIFY DOMAIN HERE"; // e.g 'bogos-tapcart-integration.myshopify.com';
 
 //Replace with API Key. Please contact support from Bogos to to receive key
-const apiKey ="YOUR API KEY HERE";
+const apiKey = "YOUR API KEY HERE";
 
 // Do not make changes below this line //
 
