@@ -1,8 +1,8 @@
- const STOREFRONT_ACCESS_TOKEN =  "XXXXXXXXXXXXXXXXXXXXX" // get your storefront access token by going to Shopify Admin > Apps and Sales Channels > Develop Apps
+// Configuration
+
+const STOREFRONT_ACCESS_TOKEN =  "XXXXXXXXXXXXXXXXXXXXX" // get your storefront access token by going to Shopify Admin > Apps and Sales Channels > Develop Apps
 
 const app_store_url = "yourstore.myshopify.com"; // your admin store URL
-
-const multiplier = 1; // current multiplier
 
 const app_is_multiplier_enabled  = 'y'; // # enable or disable the multiplier value from showing y=Yes n=No
 
@@ -14,6 +14,11 @@ const app_multiplier_font_color  = 'white'; // # multiplier font color
 
 
 // Do not make changes below this line
+
+const tag = Tapcart.variables.product.tags.find(tag => tag.startsWith("multiplier_"));
+
+const multiplier = tag ? parseInt(tag.split("_")[1], 10) : 1;
+
 const app_product_id  = document.getElementById("tapcartCentryCcard").getAttribute('data-productid'); 
 
 const GRAPHQL_URL = "https://"+app_store_url+"/api/2022-10/graphql.json"; 

@@ -8,8 +8,6 @@ const collectionHandle = "all"; // your collection page handle
 
 const perPageItemCount = 8; // number of products to show
 
-const multiplier = 1; // current multiplier
-
 const app_is_entries_icon = 'n';   // enable or disable the icon y=Yes n=No
 
 const app_is_multiplier_enabled  = 'y'; // enable or disable the multiplier value from showing y=Yes n=No
@@ -24,8 +22,8 @@ const app_multiplier_font_color  = 'white'; // multiplier font color
 
 // Do not make changes below this line
 
-const GRAPHQL_URL = "https://"+app_store_url+"/api/2022-10/graphql.json"; 
-  const productQuery = () => `query {
+const GRAPHQL_URL = "https://" + app_store_url + "/api/2022-10/graphql.json";
+const productQuery = () => `query {
     collection(handle:"${collectionHandle}") {
         handle 
         title
@@ -34,7 +32,8 @@ const GRAPHQL_URL = "https://"+app_store_url+"/api/2022-10/graphql.json";
           node {
             id
             title
-            handle  
+            handle
+            tags
             featuredImage{
               src
             }
@@ -56,8 +55,8 @@ const GRAPHQL_URL = "https://"+app_store_url+"/api/2022-10/graphql.json";
         }
       }
     }
-}`; 
-  
+}`;
+
 const GRAPHQL_BODY = () => {
   return {
     async: true,
@@ -73,47 +72,45 @@ const GRAPHQL_BODY = () => {
 
 fetch(GRAPHQL_URL, GRAPHQL_BODY())
   .then((res) => res.json())
-  .then((productResponse) => { 
+  .then((productResponse) => {
+    if (productResponse.data.collection != null) {
+      var products = productResponse.data.collection.products.edges;
 
-    var html = ''; 
-     if(productResponse.data.collection != null){
+      let productGridArea = document.querySelector(".product-grid-area");
+      let multiplier; // current multiplier
+      products.forEach(function (product) {
         
-        var products = productResponse.data.collection.products.edges
-        products.forEach(function (product) { 
-          console.log(product.node)
-         var fullPid = product.node.id
-          var pid = fullPid.replace("gid://shopify/Product/","");
+        var fullPid = product.node.id.split("/").pop()
+        const tag = product.node.tags.find(tag => tag.startsWith("multiplier_"));
+        multiplier = tag ? parseInt(tag.split("_")[1], 10) : 1;
 
-          html += '<div class="product-wrapper"><a href="#" onclick="viewProduct('+pid+');" data-pid="'+pid+'" class="product-link openProduct" >';
-          html += '<div class="product-image"><img src="' + product.node.featuredImage.src + '"></div>';
-          html += '<p>' + product.node.title + '</p>';
-          var variants = product.node.variants.edges[0].node
-          var price = variants.price.amount
-          html += '<span class="price-wrapper">$'+price+'</span>';
-          html += '<div class="entries-container">';
-          html += '<div class="total-entries">';
-          if(app_is_entries_icon=='y'){
-              html += '<i class="fa-solid fa-ticket"></i>';
-            }
-          var bonusEntries = Math.floor (price  * multiplier)
-          html += '<span class="entries-number" data-bonuscount="0">'+bonusEntries+'</span>';
-          html += '<span class="label-area">Entries</span></div>';
-          if(app_is_multiplier_enabled=='y'){
-           
-              html += '<div class="multiplier" style="color:'+app_multiplier_font_color+';background-color:'+app_multiplier_background_color+'">' + multiplier+'X</div>';
-             
-          }
-          html += '</div>';
-          html += '</a></div>'; 
-          
-          document.getElementById("api_products").innerHTML = html;
-          document.getElementById("api_products").style.display = "flex";
-        });
- 
-     }
+        let productWrapper = `
+        
+        <div class="product-wrapper">
+            <a href="#" onclick="viewProduct(${fullPid});" data-pid="${fullPid}" class="product-link openProduct">
+                <div class="product-image">
+                <img src="${product.node.featuredImage.src}">
+                </div>
+                <p>${product.node.title}</p>
+                <span class="price-wrapper">$${product.node.variants.edges[0].node.price.amount}</span>
+                <div class="entries-container">
+                <div class="total-entries">
+                    ${app_is_entries_icon == "y" ? '<i class="fa-solid fa-ticket"></i>' : ''}
+                    <span class="entries-number" data-bonuscount="0">${Math.floor(product.node.variants.edges[0].node.price.amount * multiplier)}</span>
+                    <span class="label-area">Entries</span>
+                </div>
+                ${app_is_multiplier_enabled == "y" ? `<div class="multiplier" style="color:${app_multiplier_font_color};background-color:${app_multiplier_background_color}">${multiplier}X</div>` : ''}
+                </div>
+            </a>
+        
+        `
+        productGridArea.innerHTML += productWrapper;
+        document.getElementById("api_products").style.display = "flex";
+      });
+    }
   });
- function viewProduct(id) {
- Tapcart.actions.openProduct({
-    productId: id
-  }) 
+function viewProduct(id) {
+  Tapcart.actions.openProduct({
+    productId: id,
+  });
 }
