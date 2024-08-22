@@ -39,7 +39,11 @@ const aggregateOptions = (product) => {
             const optionValue = getVariantOption(variant);
 
             // Reduce options, excluding duplicates
-            if (optionValue && !(optionValue in acc)) {
+            if (
+                optionValue &&
+                (!(optionValue in acc) ||
+                    (!acc[optionValue].variant.isAvailable && variant.isAvailable))
+            ) {
                 acc[optionValue] = {
                     option: optionValue,
                     variant,
