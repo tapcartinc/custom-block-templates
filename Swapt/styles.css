@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+  
+}
+.tapcart-button {
+    background-color: #256EFF; /* Updated main color */
+    color: #fff;
+    border: none;
+    margin: 5px;
+    font-size:18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.tapcart-button:hover {
+    background-color: #1E5CDD; /* Slightly darker shade */
+    transform: scale(1.05);
+}
+
+.tapcart-button:active {
+    background-color: #1E5CDD;
+    transform: scale(1.02);
+}
