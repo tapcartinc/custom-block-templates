@@ -122,17 +122,21 @@ async function main() {
 
     let stopListenerFlag = false;
     const selectedOptionsMap = mapSelectedOptions(getSelectedVariant());
+    let activeProduct = Tapcart.variables.product.id;
 
     Tapcart.registerEventHandler('product/updated', () => {
         if (stopListenerFlag) return;
 
+        const latestProduct = Tapcart.variables.product.id;
         const selectedVariant = getSelectedVariant();
 
         const matchesParentOptions = selectedVariant.selectedOptions.every(
             ({ name, value }) => name === OPTION_NAME || value === selectedOptionsMap[name]
         );
 
-        if (!matchesParentOptions) {
+        // If the product switches, the variants swatch needs to switch to reflect
+        // the latest product's variants. Re-render completely.
+        if (latestProduct !== activeProduct || !matchesParentOptions) {
             stopListenerFlag = true;
             options.innerHTML = '';
             main();
