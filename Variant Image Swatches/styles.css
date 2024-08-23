@@ -43,6 +43,10 @@
     cursor: pointer;
 }
 
+#options > label.unavailable {
+    opacity: 30%;
+}
+
 #options > label > input {
     appearance: none;
 }

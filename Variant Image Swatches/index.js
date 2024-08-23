@@ -33,14 +33,27 @@ const getVariantOption = (variant) => {
     return optionValue;
 };
 
+const mapSelectedOptions = (variant) =>
+    variant.selectedOptions.reduce((acc, { name, value }) => {
+        acc[name] = value;
+        return acc;
+    }, {});
+
 const aggregateOptions = (product) => {
+    const selectedOptionsMap = mapSelectedOptions(getSelectedVariant());
+
     return Object.values(
         product.variants.reduce((acc, variant) => {
             const optionValue = getVariantOption(variant);
 
+            const matchesParentOptions = variant.selectedOptions.every(
+                ({ name, value }) => name === OPTION_NAME || value === selectedOptionsMap[name]
+            );
+
             // Reduce options, excluding duplicates
             if (
                 optionValue &&
+                matchesParentOptions &&
                 (!(optionValue in acc) ||
                     (!acc[optionValue].variant.isAvailable && variant.isAvailable))
             ) {
@@ -59,6 +72,7 @@ const renderOption = (name, variant) => {
     const selectedOption = getVariantOption(getSelectedVariant());
 
     const label = document.createElement('label');
+    if (!variant.isAvailable) label.classList.add('unavailable');
 
     const input = document.createElement('input');
     input.type = 'radio';
@@ -99,15 +113,33 @@ const renderHeader = (selectedOption) => {
 async function main() {
     if (shouldHide) return;
 
-    aggregateOptions(Tapcart.variables.product).forEach(({ option, variant }) =>
-        renderOption(option, variant)
-    );
+    aggregateOptions(Tapcart.variables.product)
+        .sort((a, b) => (a.variant.isAvailable ? -1 : 0))
+        .forEach(({ option, variant }) => renderOption(option, variant));
 
     const selectedOption = getVariantOption(getSelectedVariant());
     renderHeader(selectedOption);
 
+    let stopListenerFlag = false;
+    const selectedOptionsMap = mapSelectedOptions(getSelectedVariant());
+
     Tapcart.registerEventHandler('product/updated', () => {
-        const selectedOption = getVariantOption(getSelectedVariant());
+        if (stopListenerFlag) return;
+
+        const selectedVariant = getSelectedVariant();
+
+        const matchesParentOptions = selectedVariant.selectedOptions.every(
+            ({ name, value }) => name === OPTION_NAME || value === selectedOptionsMap[name]
+        );
+
+        if (!matchesParentOptions) {
+            stopListenerFlag = true;
+            options.innerHTML = '';
+            main();
+            return;
+        }
+
+        const selectedOption = getVariantOption(selectedVariant);
 
         options[OPTION_NAME].value = selectedOption;
         renderHeader(selectedOption);
