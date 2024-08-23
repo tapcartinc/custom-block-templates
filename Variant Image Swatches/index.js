@@ -114,7 +114,7 @@ async function main() {
     if (shouldHide) return;
 
     aggregateOptions(Tapcart.variables.product)
-        .sort((a, b) => (b.variant.isAvailable && !a.variant.isAvailable ? -1 : 0))
+        .sort((a, b) => (!b.variant.isAvailable && a.variant.isAvailable ? -1 : 0))
         .forEach(({ option, variant }) => renderOption(option, variant));
 
     const selectedOption = getVariantOption(getSelectedVariant());
