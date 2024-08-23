@@ -10,33 +10,19 @@ let singleRow = true
 // Type either "pound", "dollar", "euro", "yen", "yuan", or "won" to change the currency symbol
 let currency = 'dollar'
 
-let currencySymbol
-currency = currency.toLowerCase()
-switch (currency) {
-  case 'pound':
-    currencySymbol = '£'
-    break
-  case 'dollar':
-    currencySymbol = '$'
-    break
-  case 'euro':
-    currencySymbol = '€'
-    break
-  case 'yen':
-    currencySymbol = '¥'
-    break
-  case 'won':
-    currencySymbol = '₩'
-    break
-  case 'yuan':
-    currencySymbol = '元'
-    break
-  default:
-    currencySymbol = '$'
-}
+
+// Function to format a number as currency
+let currencyCode = Tapcart.variables.cart.currency;
+let locale = Tapcart.variables.device.locale.replace('_', '-')
+let countryCode = locale.split('-')[1].toUpperCase()
+const formatter = new Intl.NumberFormat(locale, {
+  style: "currency",
+  currency: currencyCode,
+  currencyDisplay: "symbol",
+});
 
 const productRecommendationQuery = () => `
-  query {
+  query @inContext(country: ${countryCode}){
     productRecommendations(productId: "gid://shopify/Product/${productId}") {
       id
       title
@@ -103,11 +89,10 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
           <img src='${product.featuredImage.url}' alt='Product 1'>
           <p class="product-title">${product.title}</p>
           <div class="prices">
-            <p class="price">${currencySymbol}${priceNum}</p> ${
-        compareAtPrice && compareAtPrice.amount !== '0.0' && compareAtPrice.amount !== priceNum
-          ? `<p class="compare">${currencySymbol}${compareAtPriceNum}</p>`
-          : ''
-      }
+            <p class="price">${formatter.format(priceNum)}</p> 
+            ${compareAtPrice && compareAtPrice.amount !== '0.0' && compareAtPrice.amount !== rawPriceString
+          ? `<p class="compare">${formatter.format(compareAtPriceNum)}</p>`
+          : ''}
         </div>`
 
       let row = singleRow || i % 2 === 0 ? row1 : row2
