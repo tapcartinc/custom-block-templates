@@ -78,7 +78,6 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
 
     productRecommendations.forEach((product, i) => {
       const compareAtPrice = product.variants.edges[0].node.compareAtPrice
-      console.log(compareAtPrice)
       const rawPriceString = product.priceRange.minVariantPrice.amount
       const priceNum = parseFloat(rawPriceString).toFixed(2)
       const compareAtPriceNum = compareAtPrice ? parseFloat(compareAtPrice.amount).toFixed(2) : null

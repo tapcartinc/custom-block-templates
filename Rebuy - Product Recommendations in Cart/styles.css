@@ -1,0 +1,307 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  }
+  
+  .main {
+    margin-top: 10px;
+    margin-left: 15px;
+    min-height: 301px;
+  }
+  
+  .title {
+    padding-bottom: 15px;
+  }
+  .product-carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: scroll;
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  .product-image img {
+    width: auto;
+    height: 7rem;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .product-title {
+    font-size: 0.8rem;
+    min-height: 2.5em;
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .product-price {
+    margin-top: 5px;
+    font-size: .9rem;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  @keyframes placeholder-shimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  @-webkit-keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  .timeline-wrapper {
+    /*   background-color: #e9eaed; */
+    color: #141823;
+    padding: 20px;
+    /*   border: 1px solid #f5e9e9; */
+    min-height: 207px;
+    min-width: 172.5px;
+  }
+  
+  .timeline-item {
+    background: #fff;
+    /*   border: 1px solid; */
+    /*   border-color: #e5e6e9 #dfe0e4 #d0d1d5; */
+    border-radius: 3px;
+    padding: 12px;
+    margin: 0 auto;
+    max-width: 472px;
+    min-height: 200px;
+  }
+  
+  .animated-background {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+    animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: #eeeeee;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(8%, #eeeeee),
+      color-stop(18%, #dddddd),
+      color-stop(33%, #eeeeee)
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #eeeeee 8%,
+      #dddddd 18%,
+      #eeeeee 33%
+    );
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    -webkit-background-size: 800px 104px;
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+  }
+  
+  .background-masker {
+    background: #fff;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .outlined .background-masker {
+    border: 1px solid #ddd;
+  }
+  
+  .outlined:hover .background-masker {
+    border: none;
+  }
+  
+  .outlined:hover .background-masker:hover {
+    border: 1px solid #ccc;
+    z-index: 1;
+  }
+  
+  .background-masker.header-top,
+  .background-masker.header-bottom,
+  .background-masker.subheader-bottom {
+    top: 0;
+    left: 40px;
+    right: 0;
+    height: 10px;
+  }
+  
+  .background-masker.header-left,
+  .background-masker.subheader-left,
+  .background-masker.header-right,
+  .background-masker.subheader-right {
+    top: 10px;
+    left: 40px;
+    height: 8px;
+    width: 10px;
+  }
+  
+  .background-masker.header-bottom {
+    top: 18px;
+    height: 6px;
+  }
+  
+  .background-masker.subheader-left,
+  .background-masker.subheader-right {
+    top: 24px;
+    height: 6px;
+  }
+  
+  .background-masker.header-right,
+  .background-masker.subheader-right {
+    width: auto;
+    left: 300px;
+    right: 0;
+  }
+  
+  .background-masker.subheader-right {
+    left: 230px;
+  }
+  
+  .background-masker.subheader-bottom {
+    top: 30px;
+    height: 10px;
+  }
+  
+  .background-masker.content-top,
+  .background-masker.content-second-line,
+  .background-masker.content-third-line,
+  .background-masker.content-second-end,
+  .background-masker.content-third-end,
+  .background-masker.content-first-end {
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+  
+  .background-masker.content-top {
+    height: 20px;
+  }
+  
+  .background-masker.content-first-end,
+  .background-masker.content-second-end,
+  .background-masker.content-third-end {
+    width: auto;
+    left: 380px;
+    right: 0;
+    top: 60px;
+    height: 8px;
+  }
+  
+  .background-masker.content-second-line {
+    top: 68px;
+  }
+  
+  .background-masker.content-second-end {
+    left: 420px;
+    top: 74px;
+  }
+  
+  .background-masker.content-third-line {
+    top: 82px;
+  }
+  
+  .background-masker.content-third-end {
+    left: 300px;
+    top: 88px;
+  }
+  
+  .product-card.placeholder {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholder-shimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+  }
+  
+  .add-to-cart {
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 0.8rem;
+    background-color: rgb(0,0,0);
+    min-width: 100px;
+    width: 100%;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0px;
+    background: white;
+    width: 100%;
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.2rem;
+    height: 1.5rem;
+    margin: auto;
+    border-radius: 3px;
+  
+    color: inherit;
+    font: inherit;
+    font-size: 0.8rem;
+    text-transform: none;
+    line-height: inherit;
+  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
