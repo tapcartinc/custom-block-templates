@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior: none;
+    font-size: 0.95rem;
+    color: black;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+#container {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#container.hidden {
+    display: none;
+    padding: 0px;
+}
+
+#options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#options > label {
+    flex: 50px 0 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+#options > label.unavailable {
+    opacity: 30%;
+}
+
+#options > label > input {
+    appearance: none;
+}
+
+#options > label > input + div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#options > label > input:checked + div {
+    border-color: black;
+}
+
+#options > label > input + div > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
