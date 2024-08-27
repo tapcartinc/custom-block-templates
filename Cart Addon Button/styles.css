@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    -webkit-tap-highlight-color: transparent;
+    color: black;
+}
+
+#root {
+    transition: all 0.25s linear;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+#root.expanded {
+    max-height: 100px;
+    padding: 10px 5px;
+}
+
+button {
+    user-select: none;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: none;
+    border-radius: 1em;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+button:active {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+button > img {
+    width: 2em;
+    /* Force the icon to black */
+    filter: brightness(0%);
+}
+
+button > span {
+    font-size: 1em;
+}
