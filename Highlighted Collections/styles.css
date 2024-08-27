@@ -1,0 +1,69 @@
+:root {
+    --backgroundColor: black;
+    --textColor: white;
+    --activeColor: rgba(217, 108, 108, 0.1);
+    --borderColor: #1a1a1a;
+    --iconSize: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#panel {
+    background: var(--backgroundColor);
+}
+
+#header {
+    color: var(--textColor);
+    text-align: center;
+    padding: 50px 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    user-select: none;
+    cursor: pointer;
+    background: none;
+    padding: 15px;
+    flex: 33% 1;
+    max-width: 175px;
+    border: 1px solid var(--borderColor);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.card:active {
+    background: var(--activeColor);
+}
+
+.card > span {
+    height: var(--iconSize);
+    width: var(--iconSize);
+}
+
+.card > span > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.card > p {
+    color: var(--textColor);
+}
