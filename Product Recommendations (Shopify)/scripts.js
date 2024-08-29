@@ -2,19 +2,19 @@ const STOREFRONT_ACCESS_TOKEN = 'Storefront Access Token Goes Here'
 const storeDomain = 'Store Name Goes Here'
 
 const GRAPHQL_URL = `https://${storeDomain}.myshopify.com/api/2024-04/graphql.json`
+
 const productId = Tapcart.variables.product.id
 
 // Change singleRow to true to display the product recommendations in a single row
-let singleRow = true
-
-// Type either "pound", "dollar", "euro", "yen", "yuan", or "won" to change the currency symbol
-let currency = 'dollar'
-
+let singleRow = true;
 
 // Function to format a number as currency
 let currencyCode = Tapcart.variables.cart.currency;
+
 let locale = Tapcart.variables.device.locale.replace('_', '-')
+
 let countryCode = locale.split('-')[1].toUpperCase()
+
 const formatter = new Intl.NumberFormat(locale, {
   style: "currency",
   currency: currencyCode,
@@ -73,6 +73,7 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
 
     const row1 = document.createElement('div')
     row1.classList.add('row')
+
     const row2 = document.createElement('div')
     row2.classList.add('row')
 

@@ -48,7 +48,7 @@ label {
 
 img {
   height: 9rem;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 4px;
 }
 
