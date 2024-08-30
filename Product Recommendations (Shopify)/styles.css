@@ -2,8 +2,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
-  -ms-overflow-style: none !important;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+
 }
 
 .main {
@@ -35,7 +36,7 @@ label {
 .row {
   display: flex;
   overflow-x: auto;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .product-card {
@@ -47,7 +48,7 @@ label {
 }
 
 img {
-  height: 9rem;
+  height: 14rem;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -63,15 +64,33 @@ img {
   text-overflow: ellipsis;
 }
 
+select {
+  width: 100%;
+}
+
 .prices {
   margin-top: 5px;
   display: flex;
   flex-direction: row;
   font-size: 1rem;
-  gap: 5px;
+  gap: 6px;
 }
 
 .compare {
   text-decoration: line-through;
-  color: red;
+}
+
+.add-to-cart {
+  margin-top: 5px;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background-color: black;
+  color: white;
+  outline: none;
+  border-radius: 3px;
 }

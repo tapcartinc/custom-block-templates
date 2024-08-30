@@ -1,8 +1,6 @@
 let accountId = '<INPUT YOUR ACCOUNT ID HERE>'
 let containerBgUrl = '<INPUT YOUR CONTAINER BACKGROUND URL HERE>'
 
-
-
 function injectLyveComWidgetScript() {
   
   const container = document.querySelector('.container')
