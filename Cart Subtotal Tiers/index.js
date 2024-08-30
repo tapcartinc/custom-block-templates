@@ -48,24 +48,16 @@ const shouldHide = Boolean(
 const container = document.querySelector('#container');
 const progress = document.querySelector('#progress');
 
-const round = (num, factor) => Math.round(num / factor) * factor;
+const round = (num) => {
+    const result = Math.round(num / 0.01) * 0.01;
+    return parseFloat(result.toFixed(10));
+};
 
 // Cart utilities
 const cart = {
     hasItem: (productId, variantId) =>
         Tapcart.variables.cart.items.find((item) => {
             return item.productId === productId && item.variantId === variantId;
-        }),
-    waitForUpdate: () =>
-        new Promise((resolve) => {
-            let stopListenerFlag = false;
-
-            Tapcart.registerEventHandler('cart/updated', () => {
-                if (stopListenerFlag) return;
-
-                resolve();
-                stopListenerFlag = true;
-            });
         }),
 };
 
@@ -87,7 +79,7 @@ const tiers = {
             },
             { thresholds: [], crossedCount: 0 }
         ),
-    runActions: async (aggregated) => {
+    runActions: (aggregated) => {
         // Aggregate lists of line items that need to be added/removed
         const { toAdd, toRemove } = aggregated.reduce(
             (acc, { addToCart, crossed }) => {
@@ -110,13 +102,8 @@ const tiers = {
             { toAdd: [], toRemove: [] }
         );
 
-        const itemsRemoved = cart.waitForUpdate();
         Tapcart.actions.removeFromCart({ lineItems: toRemove });
-        await itemsRemoved;
-
-        const itemsAdded = cart.waitForUpdate();
         Tapcart.actions.addToCart({ lineItems: toAdd });
-        await itemsAdded;
     },
 };
 
@@ -203,7 +190,7 @@ async function main() {
                     ? 'You qualify for all tiers!'
                     : // If just one tier, name the tier in the title, as the list above is hidden.
                       `Congrats! You qualify for ${aggregated[aggregated.length - 1].title}!`
-                : `Add $${round(nextThreshold.amount - cartAmount, 0.01)} more for ${
+                : `Add $${round(nextThreshold.amount - cartAmount)} more for ${
                       nextThreshold.title
                   }!`
         );
