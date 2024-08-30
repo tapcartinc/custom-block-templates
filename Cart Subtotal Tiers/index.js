@@ -87,7 +87,7 @@ const tiers = {
             },
             { thresholds: [], crossedCount: 0 }
         ),
-    runActions: (aggregated) => {
+    runActions: async (aggregated) => {
         // Aggregate lists of line items that need to be added/removed
         const { toAdd, toRemove } = aggregated.reduce(
             (acc, { addToCart, crossed }) => {
@@ -110,8 +110,13 @@ const tiers = {
             { toAdd: [], toRemove: [] }
         );
 
+        const itemsRemoved = cart.waitForUpdate();
         Tapcart.actions.removeFromCart({ lineItems: toRemove });
+        await itemsRemoved;
+
+        const itemsAdded = cart.waitForUpdate();
         Tapcart.actions.addToCart({ lineItems: toAdd });
+        await itemsAdded;
     },
 };
 
@@ -220,6 +225,7 @@ async function main() {
     title.append();
     progressBar.append();
 
+    // Finally, show the block.
     container.classList.remove('hidden');
 }
 
