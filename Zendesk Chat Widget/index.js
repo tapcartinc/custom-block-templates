@@ -64,13 +64,8 @@ const widgetOpenState = async () => {
     };
 };
 
-const handleOpen = () => {
-    body.classList.add('open');
-};
-
-const handleClose = () => {
-    body.classList.remove('open');
-};
+const handleOpen = () => body.classList.add('open');
+const handleClose = () => body.classList.remove('open');
 
 async function main() {
     body.classList.add('hidden');
