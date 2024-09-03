@@ -136,6 +136,8 @@ async function main() {
             main();
             return;
         }
+
+        handleProductUpdate();
     });
 }
 
