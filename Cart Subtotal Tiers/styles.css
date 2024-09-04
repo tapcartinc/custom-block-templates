@@ -60,10 +60,6 @@
     color: var(--primary);
 }
 
-#progress > progress {
-    width: 100%;
-}
-
 #progress > progress::-webkit-progress-bar {
     background-color: var(--secondary);
 }
@@ -79,6 +75,7 @@
 }
 
 #progress > progress {
+    width: 100%;
     background-color: var(--primary);
     color: var(--primary);
     border: 2px solid var(--primary);
