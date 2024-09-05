@@ -65,6 +65,7 @@ function main() {
     if (!linkConfig) return;
 
     const linkUrl = links[mobileOS](linkConfig.appName, linkConfig.appId);
+    // This is critical for the link to work
     linkElement.target = '_blank';
     linkElement.href = linkUrl;
 
