@@ -1,6 +1,6 @@
 # App Store/Play Store Deep Link
 
-Link straight from your Tapcart mobile app to the download page of another app in the App Store/Play Store. The custom block automatically detects the user's operating system, and generates the appropriate link.
+Link straight from your Tapcart mobile app to the listing page of another app in the App Store/Play Store. The custom block automatically detects the user's operating system, and generates the appropriate link.
 
 Upon clicking the link, the user is seamlessly taken to the App Store or Play Store depending on their OS.
 
