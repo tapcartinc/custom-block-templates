@@ -8,9 +8,17 @@ const OPTION_TITLE = 'Color';
 const util = {
     // Your own custom logic for retrieving the handle to the collection grouping the
     // products (e.g. one collection of the same shoe product, but different colors)
-    getCollectionHandle: (product) => product.metafields?.color_info?.colors_collection_handle,
+    // Products can also be grouped by tag
+    getGroupTag: (product) => product.tags.find((tag) => tag.startsWith('style:')),
     // Your own custom logic for grabbing a given product's corresponding option (e.g. Black)
-    getSelectedOptionName: (product) => product.metafields?.color_info?.product_color,
+    getSelectedOptionName: (product) => {
+        const selectedVariant = product.variants.find(
+            ({ id }) => id === product.selectedVariant.id
+        );
+
+        return selectedVariant?.selectedOptions?.find(({ name }) => name.toLowerCase() === 'color')
+            ?.value;
+    },
 };
 // * Config
 
@@ -51,32 +59,44 @@ const storefrontApi =
 
 const storefront = storefrontApi(MY_SHOPIFY_URL, STOREFRONT_TOKEN);
 
-const getCollectionProducts = storefront(`#graphql
-    query getCollection($handle: String!) {
-        collection(handle: $handle) {
-            products(first: 250) {
-                edges {
-                    node {
-                        id
-                        featuredImage {
-                            url
-                        }
-                    }
-                }
-            }
-        }
-    }
+const getGroupProducts = storefront(`#graphql
+    query getGroupProducts($query: String!) {
+      products(first: 250, query: $query) {
+          edges {
+              node {
+                  availableForSale
+                  id
+                  featuredImage {
+                      url
+                  }
+                  variants(first: 250) {
+                      edges {
+                          node {
+                              id
+                              availableForSale
+                              selectedOptions {
+                                  name
+                                  value
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
 `);
 
 const renderHeader = (optionName) => {
     const header = document.querySelector('#container > span') || document.createElement('span');
-    header.innerHTML = `<b>${OPTION_TITLE}</b>: ${optionName}`;
+    header.innerHTML = `<b>${OPTION_NAME}</b>: ${selectedOption}`;
 
     container.prepend(header);
 };
 
-const renderOption = ({ imageUrl, productId }) => {
+const renderOption = ({ imageUrl, productId, variantId, available }) => {
     const label = document.createElement('label');
+    if (!available) label.classList.add('unavailable');
 
     const input = document.createElement('input');
     input.type = 'radio';
@@ -100,33 +120,73 @@ const renderOption = ({ imageUrl, productId }) => {
         e.preventDefault();
 
         Tapcart.actions.openProduct({
+            variantId,
             productId,
             isRelatedProduct: true,
         });
     });
 };
 
+const getSelectedVariant = () =>
+    Tapcart.variables.product.variants.find(
+        ({ id }) => id === Tapcart.variables.product.selectedVariant.id
+    );
+
+const getSelectedOptionMap = (variant) =>
+    variant.selectedOptions.reduce((acc, { name, value }) => {
+        acc[name] = value;
+        return acc;
+    }, {});
+
 async function main() {
     if (shouldHide) return;
 
     // Grab the collection that holds all products in the group
-    const collectionHandle = util.getCollectionHandle(Tapcart.variables.product);
-    if (!collectionHandle) return;
+    const groupTag = util.getGroupTag(Tapcart.variables.product);
+    if (!groupTag) return;
 
-    const { data } = await getCollectionProducts({ handle: collectionHandle });
-    data.collection.products.edges.map(({ node: { featuredImage, id } }) =>
-        renderOption({
-            imageUrl: featuredImage.url,
-            productId: id.split('/').pop(),
-        })
-    );
+    const { data } = await getGroupProducts({ query: `tag:${groupTag}` });
 
-    const selectedOptionName = util.getSelectedOptionName(Tapcart.variables.product);
-    renderHeader(selectedOptionName);
+    const handleProductUpdate = () => {
+        const selectedVariant = getSelectedVariant();
+        const selectedOptionMap = getSelectedOptionMap(selectedVariant);
+
+        data.products.edges.map(({ node: { featuredImage, id, variants, availableForSale } }) => {
+            // Find the relevant variant so if selected, can be navigated to smoothly
+            // without resetting variant.
+            const { node: relevantVariant } =
+                variants?.edges?.find(({ node }) =>
+                    node.selectedOptions.every(
+                        ({ name, value }) =>
+                            name.toLowerCase() === 'color' || value === selectedOptionMap[name]
+                    )
+                ) ?? {};
+
+            renderOption({
+                imageUrl: featuredImage.url,
+                productId: id.split('/').pop(),
+                variantId: relevantVariant?.id?.split('/')?.pop(),
+                available: relevantVariant?.availableForSale || availableForSale,
+            });
+        });
+
+        const selectedOptionName = util.getSelectedOptionName(Tapcart.variables.product);
+        renderHeader(selectedOptionName);
+    };
+
+    handleProductUpdate();
+
+    const selectedVariant = getSelectedVariant();
 
     Tapcart.registerEventHandler('product/updated', () => {
         const selectedOptionName = util.getSelectedOptionName(Tapcart.variables.product);
         renderHeader(selectedOptionName);
+
+        const latestVariant = getSelectedVariant();
+        if (latestVariant?.id !== selectedVariant?.id) {
+            options.innerHTML = '';
+            handleProductUpdate();
+        }
 
         options[OPTION_TITLE].value = Tapcart.variables.product.id;
     });

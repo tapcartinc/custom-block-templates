@@ -45,6 +45,10 @@
     flex: var(--size) 0 0;
 }
 
+#options > label.unavailable {
+    opacity: 30%;
+}
+
 #options > label > input {
     appearance: none;
 }
