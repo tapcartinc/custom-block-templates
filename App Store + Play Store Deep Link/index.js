@@ -53,7 +53,7 @@ const determineMobileOS = () => {
 
 const links = {
     Android: (appId) => `https://play.google.com/store/apps/details?id=${appId}`,
-    iOS: (appName, appId) => `https://apps.apple.com/app/${appName.toLowerCase()}/id${appId}`,
+    iOS: (appId, appName) => `https://apps.apple.com/app/${appName.toLowerCase()}/id${appId}`,
 };
 
 function main() {
@@ -64,8 +64,7 @@ function main() {
     const linkConfig = CONFIG[mobileOS];
     if (!linkConfig) return;
 
-    const linkUrl = links[mobileOS](linkConfig.appName, linkConfig.appId);
-    // This is critical for the link to work
+    const linkUrl = links[mobileOS](linkConfig.appId, linkConfig.appName);
     linkElement.target = '_blank';
     linkElement.href = linkUrl;
 
