@@ -6,7 +6,7 @@ This block allows customers pull reviews into their Product Detail Page. Leading
 ## How this block works
 1. Adds a Div to the HTML markup
 2. Uses the Judge.me Content Distribution Network to reach their own servers
-3. Reviews are then poulated
+3. Reviews are then populated
 4. You can choose to customize style from with CSS files
 
 ## Setup Instructions
