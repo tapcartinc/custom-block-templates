@@ -1,0 +1,28 @@
+:root {
+    --fontSize: 0.9rem;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior: none;
+    font-size: var(--fontSize);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+#container {
+    padding: 5px 15px;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
