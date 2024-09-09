@@ -137,18 +137,17 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
     productRecommendations.forEach((product, i) => {
       const compareAtPrice = product.variants.edges[0].node.compareAtPrice;
       const rawPriceString = product.priceRange.minVariantPrice.amount;
-      const priceNum = parseFloat(rawPriceString).toFixed(2);
-      const compareAtPriceNum = compareAtPrice
-        ? parseFloat(compareAtPrice.amount).toFixed(2)
-        : null;
+      const priceNum = parseFloat(rawPriceString);
+      const compareAtPriceNum = compareAtPrice ? parseFloat(compareAtPrice.amount) : null;
+    
       const placeholder = document.createElement("div");
       let variants = product.variants.edges;
-
+    
       placeholder.classList.add("product-card");
       if (typeOfBlock === "openProduct") {
         placeholder.addEventListener("click", () => clickProduct(product.id));
       }
-
+    
       if (typeOfBlock === "addToCart") {
         placeholder.innerHTML = `
           <img src='${product.featuredImage.url}' alt='Product 1'>
@@ -158,12 +157,12 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
           </div>
           <div class="prices">
             <p class="price">${formatter.format(priceNum)}</p> ${
-          compareAtPrice && compareAtPrice.amount !== "0.0"
-            ? `<p class="compare">${formatter.format(compareAtPriceNum)}</p>`
-            : ""
-        }
-        </div>
-        <div class="add-to-cart"><button onclick="addToCart(this.parentElement.previousElementSibling.previousElementSibling.querySelector('.variant-select').value)">Add to Cart</button></div>
+              compareAtPriceNum && compareAtPriceNum !== 0.0 && compareAtPriceNum !== priceNum
+                ? `<p class="compare">${formatter.format(compareAtPriceNum)}</p>`
+                : ""
+            }
+          </div>
+          <div class="add-to-cart"><button onclick="addToCart(this.parentElement.previousElementSibling.previousElementSibling.querySelector('.variant-select').value)">Add to Cart</button></div>
         `;
       } else {
         placeholder.innerHTML = `
@@ -171,27 +170,24 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
           <p class="product-title">${product.title}</p>
           <div class="prices">
             <p class="price">${formatter.format(priceNum)}</p> ${
-          compareAtPrice && compareAtPrice.amount !== "0.0"
-            ? `<p class="compare">${formatter.format(compareAtPriceNum)}</p>`
-            : ""
-        }
-        </div>`;
+              compareAtPriceNum && compareAtPriceNum !== 0.0 && compareAtPriceNum !== priceNum
+                ? `<p class="compare">${formatter.format(compareAtPriceNum)}</p>`
+                : ""
+            }
+          </div>`;
       }
-
-
+    
       let row = singleRow || i % 2 === 0 ? row1 : row2;
       row.appendChild(placeholder);
-
-      // If the block type is addToCart, this creates a variant options dropdown
+    
       if (typeOfBlock === "addToCart") {
         let selectElement = placeholder.querySelector(".variant-select");
         variants.forEach((variant) => {
-          if(variant.node.availableForSale){
-            
-          let option = document.createElement("option");
-          option.text = variant.node.title;
-          option.value = variant.node.id.split("/").pop();
-          selectElement.appendChild(option);
+          if (variant.node.availableForSale) {
+            let option = document.createElement("option");
+            option.text = variant.node.title;
+            option.value = variant.node.id.split("/").pop();
+            selectElement.appendChild(option);
           }
         });
       }
