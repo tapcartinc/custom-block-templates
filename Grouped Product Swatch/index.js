@@ -89,7 +89,7 @@ const getGroupProducts = storefront(`#graphql
 
 const renderHeader = (optionName) => {
     const header = document.querySelector('#container > span') || document.createElement('span');
-    header.innerHTML = `<b>${OPTION_NAME}</b>: ${selectedOption}`;
+    header.innerHTML = `<b>${OPTION_TITLE}</b>: ${optionName}`;
 
     container.prepend(header);
 };
@@ -176,7 +176,7 @@ async function main() {
 
     handleProductUpdate();
 
-    const selectedVariant = getSelectedVariant();
+    let selectedVariant = getSelectedVariant();
 
     Tapcart.registerEventHandler('product/updated', () => {
         const selectedOptionName = util.getSelectedOptionName(Tapcart.variables.product);
@@ -187,6 +187,7 @@ async function main() {
             options.innerHTML = '';
             handleProductUpdate();
         }
+        selectedVariant = latestVariant;
 
         options[OPTION_TITLE].value = Tapcart.variables.product.id;
     });
