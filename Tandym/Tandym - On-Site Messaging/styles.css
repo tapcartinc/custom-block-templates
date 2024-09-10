@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    
+}
+
+#tandym-mapps {
+  padding: 20px;
+}
+
+.tandym_widget_container {
+    background: #fff;
+    font-family: sans-serif;
+    font-weight: normal;;
+}
+
+.tandym_widget_container p {
+    color: #666 !important;
+    font-size: 12px !important;
+    text-align: left !important;
+    line-height: 16px !important;
+}
+
+.tandym_widget_container p strong {
+    font-weight: medium;
+}
+
+.tandym_widget_container p img {
+    height: 18px !important;
+    max-height: 18px !important;
+    margin-bottom: 2px;
+}
