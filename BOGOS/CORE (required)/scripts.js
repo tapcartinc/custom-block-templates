@@ -8,24 +8,24 @@ const apiKey = "YOUR API KEY HERE";
 
 // Do not make changes below this line // 
 
-const endpoint ='https://test1-freegifts.freegifts.io/node/api-partner';
+const endpoint = 'https://api.freegifts.io/api-partner';
 
 const bogosApiPath = {
-  bogos: '/bogos-v2',
-  giftCustomize: '/gift-customize',
-  productsSyncQuantity: '/products-sync-quantity',
+  bogos: "/bogos-v2",
+  giftCustomize: "/gift-customize",
+  productsSyncQuantity: "/products-sync-quantity",
 };
 
 const Api = {
   makeCallBogos: async (method, path, data) => {
-    const token = await Api.createJwt()
+    const token = await Api.createJwt();
     const url = `${endpoint}${path}`;
     const requestUrl = new URL(url);
     const requestHeader = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
-      verify: shopDomain
+      verify: shopDomain,
     };
 
     const requestObject = {
@@ -35,16 +35,16 @@ const Api = {
 
     const dto = { ...data, shop: shopDomain, other: { isMobileApp: true } };
 
-    if (method == 'GET') {
+    if (method == "GET") {
       requestUrl.search = this.serialize(dto);
-    } else if (method == 'POST') {
+    } else if (method == "POST") {
       requestObject.body = JSON.stringify(dto);
     }
     try {
       const request = await fetch(requestUrl, requestObject);
       return await request.json();
     } catch (err) {
-     return;
+      return;
     }
   },
 
@@ -52,10 +52,10 @@ const Api = {
     const serialized = [];
 
     const add = (key, value) => {
-      value = typeof value === 'function' ? value() : value;
-      value = value === null ? '' : value === undefined ? '' : value;
+      value = typeof value === "function" ? value() : value;
+      value = value === null ? "" : value === undefined ? "" : value;
       serialized[serialized.length] =
-        encodeURIComponent(key) + '=' + encodeURIComponent(value);
+        encodeURIComponent(key) + "=" + encodeURIComponent(value);
     };
 
     const buildParameters = (prefix, obj) => {
@@ -66,16 +66,15 @@ const Api = {
           for (i = 0, len = obj.length; i < len; i++) {
             buildParameters(
               prefix +
-                '[' +
-                (typeof obj[i] === 'object' && obj[i] ? i : '') +
-                ']',
-              obj[i],
+                "[" +
+                (typeof obj[i] === "object" && obj[i] ? i : "") +
+                "]",
+              obj[i]
             );
           }
-        } else if (Object.prototype.toString.call(obj) === '[object Object]') {
+        } else if (Object.prototype.toString.call(obj) === "[object Object]") {
           for (key in obj) {
-            buildParameters(prefix + '[' + key + ']', obj[key]);
-            
+            buildParameters(prefix + "[" + key + "]", obj[key]);
           }
         } else {
           add(prefix, obj);
@@ -92,33 +91,33 @@ const Api = {
 
       return serialized;
     };
-    return buildParameters('', obj).join('&');
+    return buildParameters("", obj).join("&");
   },
   base64UrlEncode: (str) => {
-    return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    return btoa(str).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   },
   createSignature: async (encodedHeader, encodedPayload, secret) => {
     const encoder = new TextEncoder();
     const keyData = encoder.encode(secret);
-    const algorithm = { name: 'HMAC', hash: 'SHA-256' };
+    const algorithm = { name: "HMAC", hash: "SHA-256" };
     const key = await crypto.subtle.importKey(
-      'raw',
+      "raw",
       keyData,
       algorithm,
       false,
-      ['sign'],
+      ["sign"]
     );
     const data = encoder.encode(`${encodedHeader}.${encodedPayload}`);
-    const signature = await crypto.subtle.sign('HMAC', key, data);
+    const signature = await crypto.subtle.sign("HMAC", key, data);
     return btoa(String.fromCharCode(...new Uint8Array(signature)))
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_')
-      .replace(/=+$/, '');
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
   },
   createJwt: async () => {
     const header = {
-      alg: 'HS256',
-      typ: 'JWT',
+      alg: "HS256",
+      typ: "JWT",
     };
     const now = Math.floor(Date.now() / 1000);
     const payload = {
@@ -131,7 +130,7 @@ const Api = {
     const signature = await Api.createSignature(
       encodedHeader,
       encodedPayload,
-      apiKey,
+      apiKey
     );
     return `${encodedHeader}.${encodedPayload}.${signature}`;
   },
@@ -142,13 +141,13 @@ const utils = {
     if (data === 0) {
       return true;
     }
-    if (typeof data == 'number' || typeof data == 'boolean') {
+    if (typeof data == "number" || typeof data == "boolean") {
       return false;
     }
-    if (typeof data == 'undefined' || data === null) {
+    if (typeof data == "undefined" || data === null) {
       return true;
     }
-    if (typeof data.length != 'undefined') {
+    if (typeof data.length != "undefined") {
       return data.length === 0;
     }
     let count = 0;
@@ -170,12 +169,12 @@ const BogosIntegration = {
         quantity: variant.quantity,
         attributes: [
           {
-            key: '_source',
-            value: 'BOGOS',
+            key: "_source",
+            value: "BOGOS",
           },
           {
-            key: '_attribution',
-            value: 'BOGOS Tapcart Integration',
+            key: "_attribution",
+            value: "BOGOS Tapcart Integration",
           },
         ],
       });
@@ -191,12 +190,12 @@ const BogosIntegration = {
         quantity: variant.quantity,
         attributes: [
           {
-            key: '_source',
-            value: 'BOGOS',
+            key: "_source",
+            value: "BOGOS",
           },
           {
-            key: '_attribution',
-            value: 'BOGOS Tapcart Integration',
+            key: "_attribution",
+            value: "BOGOS Tapcart Integration",
           },
         ],
       });
@@ -204,7 +203,7 @@ const BogosIntegration = {
     Tapcart.actions.removeFromCart(data);
   },
   watchCartUpdate: () => {
-    Tapcart.registerEventHandler('cart/updated', async function (event) {
+    Tapcart.registerEventHandler("cart/updated", async function (event) {
       await BogosIntegration.initBogos(event.cart.items);
     });
   },
@@ -213,34 +212,39 @@ const BogosIntegration = {
       return;
     }
     const dataCartToRequestBogos = {
-        cartItems: cartItems.map((item) => {
-          return {
-            variant_id: item.variantId,
-            product_id: item.productId,
-            quantity: item.quantity,
-            selling_plan_allocation: {
-              selling_plan: {
-                id: item.sellingPlanId,
-              },
+      cartItems: cartItems.map((item) => {
+        return {
+          variant_id: item.variantId,
+          product_id: item.productId,
+          quantity: item.quantity,
+          selling_plan_allocation: {
+            selling_plan: {
+              id: item.sellingPlanId,
             },
-          };
-        }),
-      };
-      const res = await Api.makeCallBogos(
-        'POST',
-        bogosApiPath.bogos,
-        dataCartToRequestBogos,
-      );
+          },
+        };
+      }),
+    };
+    const res = await Api.makeCallBogos(
+      "POST",
+      bogosApiPath.bogos,
+      dataCartToRequestBogos
+    );
 
     try {
       BogosIntegration.handleLogicBogosGifts(res);
     } catch (e) {
+      Tapcart.actions.showToast({
+    message: JSON.stringify(e.message),
+    type: 'success', // "success" || "error"
+})
       return;
     }
   },
   handleLogicBogosGifts: (bogosData) => {
     const bogosGiftToAdd = bogosData?.gifts_change?.add ?? [];
     const bogosGiftToUpdate = bogosData?.gifts_change?.update ?? [];
+    const todayOfferData = bogosData?.today_offers?.data ?? [];
 
     if (bogosGiftToAdd.length > 0) {
       BogosIntegration.addToCart(bogosGiftToAdd);
@@ -258,7 +262,7 @@ const BogosIntegration = {
     return bogosGiftToUpdate
       .map((bogosGift) => {
         const cartItemFound = cartItems.find(
-          (cartItem) => cartItem.variantId == bogosGift.variant_id,
+          (cartItem) => cartItem.variantId == bogosGift.variant_id
         );
 
         if (cartItemFound) {
@@ -270,7 +274,7 @@ const BogosIntegration = {
         return null;
       })
       .filter((item) => item !== null);
-  }
+  },
 };
 
 BogosIntegration.initBogos(Tapcart.variables.cart.items);
