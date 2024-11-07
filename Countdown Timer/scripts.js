@@ -4,7 +4,6 @@
           hour = minute * 60,
           day = hour * 24;
   
-    //I'm adding this section so I don't have to keep updating this pen every year :-)
     //remove this if you don't need it
     let today = new Date(),
         dd = String(today.getDate()).padStart(2, "0"),
