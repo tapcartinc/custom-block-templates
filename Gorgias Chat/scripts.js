@@ -1,3 +1,7 @@
+/*
+NOTE: Ensure the Tapcart URL is added to the Gorgias Chat whitelist in the Gorgias Chat settings.
+*/
+
 (function () {
   script = document.createElement("script");
   script.type = "text/javascript";
