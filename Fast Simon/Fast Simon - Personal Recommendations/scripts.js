@@ -1,5 +1,5 @@
-// const uuid = "{{Storefront UUID}}";
-// const storeID = "{{Storefront Store ID}}";
+const uuid = "{{Storefront UUID}}";
+const storeID = "{{Storefront Store ID}}";
 const maxSuggestions = '5'
 
 var fastSDKScript = document.createElement('script')

@@ -1,17 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+}
+
 /* Container for the recommendation widget */
 .recommendations {
   background-color: transparent;
-  text-align: center;
   min-height: 295px;
   min-width: 300px;
 }
 
 /* Widget heading */
 #fs-title {
-  font-size: 20px;
-  color: #333;
-  margin: 10px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  margin: .3rem 1rem;
 }
 
 /* Recommendation item */
@@ -20,24 +23,28 @@
   padding: 3px;
   margin: 3px 0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Recommendation item link */
-.recommendation-item h3 {
-  font-size: 16px;
-  color: #333;
-  margin: 5px 0;
-  text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+.recommendation-item img {
+  border-radius: 4px;
+  width: 8.5rem;
+  object-fit: cover;
+}
+
+.recommendation-price-title__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .25rem;
 }
 
 /* Recommendation item price */
 .recommendation-item p {
-  font-size: 14px;
-  color: #777;
-  margin: 5px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.recommendation-price {
+  font-size: 1rem !important;
 }
 
 .recommendations-carousel {
@@ -51,14 +58,8 @@
 
 .recommendation-list {
   display: flex;
-  transition: transform 0.5s ease;
-  position: relative;
-}
-
-.recommendation-item {
-  text-align: center;
-  background: transparent;
-  margin: 0 5px;
+gap: 5px;
+  padding-left: 10px;
 }
 
 .carousel-navigation {
