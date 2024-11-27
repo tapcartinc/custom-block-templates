@@ -1,0 +1,67 @@
+:root {
+    --swatchOutline: lightgrey;
+    --selectedSwatchOutline: black;
+}
+
+* {
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+    overscroll-behavior: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+#container {
+    user-select: none;
+    padding: 5px 15px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#container.hidden {
+    display: none;
+}
+
+.swatches-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.swatches-container {
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+}
+
+.swatch > input {
+    display: none;
+}
+
+#container:not(.init) .swatch.unavailable .content {
+    text-decoration: line-through;
+}
+
+.swatch > input + .content {
+    cursor: pointer;
+    width: fit-content;
+    white-space: nowrap;
+    border: 1px solid var(--swatchOutline);
+    padding: 10px 15px;
+    border-radius: 25px;
+}
+
+.swatch > input:checked + .content {
+    border-color: var(--selectedSwatchOutline);
+}
