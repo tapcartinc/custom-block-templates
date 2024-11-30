@@ -158,11 +158,10 @@ const render = {
             });
 
             // Update rendered state based on latest true state
-            const selectedOption = optionValues.find(
-                ({ getRelevantVariant }) => getRelevantVariant(selectedOptionMap).isSelected
-            );
-            swatchesContainer[productOption.name].value = selectedOption.value;
-            titleElement.textContent = `${productOption.name}: ${selectedOption.value}`;
+            const selectedOption = selectedOptionMap[productOption.name];
+
+            swatchesContainer[productOption.name].value = selectedOption;
+            titleElement.textContent = `${productOption.name}: ${selectedOption}`;
         };
         handleProductUpdate();
         sdkEvents.addEventListener('product/updated', handleProductUpdate);
