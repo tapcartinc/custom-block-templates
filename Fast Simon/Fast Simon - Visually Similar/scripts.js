@@ -2,6 +2,14 @@ const uuid = "{{Storefront UUID}}";
 const storeID = "{{Storefront Store ID}}";
 const maxSuggestions = "5";
 
+// Set your custom font
+const customFontName = "<FONT_NAME HERE>";
+const customFontUrl = "<FONT_URL HERE>";
+
+// Careful editing below this line!!!
+
+setCustomFont(customFontUrl, customFontName);
+
 var fastSDKScript = document.createElement("script");
 fastSDKScript.src = "https://assets.fastsimon.com/sdk/latest/fast_simon_sdk.js";
 fastSDKScript.async = true;
@@ -31,6 +39,7 @@ async function fetchProducts() {
   return new Promise((resolve, reject) => {
     window.FastSimonSDK.productRecommendation({
       productID: Tapcart.variables.product.id,
+      withAttributes: true,
       specs: [
         {
           sources: [
@@ -126,7 +135,9 @@ function renderRecommendationWidget(recommendationItems) {
     // Create a paragraph for the product price
     const priceParagraph = document.createElement("p");
     priceParagraph.className = "recommendation-price";
-    priceParagraph.textContent = item.price;
+
+    let formattedPrice = reformatPrice(item.price);
+    priceParagraph.textContent = formattedPrice;
     priceParagraph.style.color =
       Tapcart.variables.theme?.tokens.colors.textColors.priceText || "black";
 
@@ -151,6 +162,35 @@ function renderRecommendationWidget(recommendationItems) {
   if (recommendationItems && recommendationItems.length > 0) {
     widgetContainer.style.display = "unset";
   }
+}
+
+function reformatPrice(price) {
+  // Step 1: Extract the numeric part and currency symbol
+  const match = price.match(/^([\d.,]+)([^\d]+)?$|^([^\d]+)?([\d.,]+)$/);
+  if (!match) {
+    throw new Error("Invalid price format");
+  }
+
+  let numericPart = match[1] || match[4]; // Numeric portion (either at start or end)
+  let symbol = match[2] || match[3] || ""; // Currency symbol (either at end or start)
+
+  // Step 2: Normalize the numeric part
+  numericPart = numericPart.replace(/,/g, "").trim(); // Remove commas
+  let numericValue = parseFloat(numericPart);
+
+  if (isNaN(numericValue)) {
+    throw new Error("Invalid numeric value");
+  }
+
+  // Step 3: Format the number to 2 decimal points
+  let formattedNumericValue = numericValue.toFixed(2);
+
+  // Step 4: Reconstruct the price string
+  const formattedPrice = symbol.startsWith(" ") // Adjust for symbol position
+    ? `${formattedNumericValue}${symbol.trim()}`
+    : `${symbol}${formattedNumericValue}`;
+
+  return formattedPrice;
 }
 
 function clickProduct(id, variantId) {
@@ -246,8 +286,134 @@ function removeSkeletonLoadingState() {
   skeletonContainer.style.display = "none";
 }
 
+function setCustomFont(url, fontFamily) {
+
+  if (!url || !fontFamily || url === "<FONT_URL HERE>") {
+    console.error("Font URL not provided");
+    return;
+  }
+
+  let fileFormat;
+  if (isGoogleFont(url)) {
+    fontFamily = extractFontNameFromUrl(url);
+    loadGoogleFont(url, fontFamily);
+  } else if (isShopifyCDNfont(url)) {
+    let rawFileFormat = extractShopifyCDNfontName(url);
+    if (rawFileFormat.fileFormat === "ttf") {
+      fileFormat = "truetype";
+    }
+
+    if (rawFileFormat.fileFormat === "woff") {
+      fileFormat = "woff";
+    }
+
+    if (rawFileFormat.fileFormat === "woff2") {
+      fileFormat = "woff2";
+    }
+
+    if (rawFileFormat.fileFormat === "otf") {
+      fileFormat = "opentype";
+    }
+
+    loadShopifyCDNFont(url, fontFamily, fileFormat);
+  } else {
+    loadCustomFont(url, fontFamily);
+  }
+
+  // Utility functions for loading custom fonts
+
+  function isGoogleFont(url) {
+    return url.startsWith("https://fonts.googleapis.com");
+  }
+
+  function isShopifyCDNfont(url) {
+    return url.startsWith("https://cdn.shopify.com");
+  }
+
+  function loadShopifyCDNFont(url, fontFamily, fileFormat) {
+
+    const styleElement = createStyleElement(`
+          @font-face {
+              font-family: '${fontFamily}';
+              src: url('${url}') format('${fileFormat}');
+          }
+         * {
+             font-family: '${fontFamily}' !important;
+          }`);
+    document.head.appendChild(styleElement);
+  }
+
+  function loadGoogleFont(url, fontFamily) {
+    const linkElement = createLinkElement(url);
+    document.head.appendChild(linkElement);
+    applyGlobalFontStyle(fontFamily);
+  }
+
+  function loadCustomFont(url, fontFamily) {
+    const styleElement = createStyleElement(`
+        @font-face {
+          font-family: '${fontFamily}';
+          src: url('${url}');
+        }
+        * {
+          font-family: '${fontFamily}' !important;
+        }
+      `);
+    document.head.appendChild(styleElement);
+  }
+
+  function createLinkElement(url) {
+    const link = document.createElement("link");
+    link.href = url;
+    link.rel = "stylesheet";
+    return link;
+  }
+
+  function createStyleElement(cssContent) {
+    const style = document.createElement("style");
+    style.innerHTML = cssContent;
+    return style;
+  }
+
+  function applyGlobalFontStyle(fontFamily) {
+    const styleElement = createStyleElement(`
+        * {
+          font-family: '${fontFamily}', sans-serif !important;
+        }
+      `);
+    document.head.appendChild(styleElement);
+  }
+
+  function extractFontNameFromUrl(url) {
+    if (isGoogleFont(url)) {
+      return extractGoogleFontName(url);
+    }
+
+    if (isShopifyCDNfont(url)) {
+      return extractShopifyCDNfontName(url);
+    }
+  }
+
+  function extractShopifyCDNfontName(url) {
+    const urlPath = new URL(url).pathname;
+    const fileName = urlPath.split("/").pop();
+    const fontFamily = fileName.split("_")[0].replace(/-/g, " ");
+    const fileFormat = fileName.split(".").pop().split("?")[0];
+    return { fontFamily, fileFormat };
+  }
+
+  function extractGoogleFontName(url) {
+    const fontParam = new URL(url).searchParams.get("family");
+    if (!fontParam) {
+      return null;
+    }
+
+    // Font name could have hyphens, so split by ':' or '+' and return the font name part
+    return fontParam.split(":")[0].replace(/\+/g, " ");
+  }
+}
+
 fastSDKScript.onload = async function () {
+  console.log("SDK script loaded...");
   await init(); // Call your init() only once the script has finished loading.
 };
-
-
