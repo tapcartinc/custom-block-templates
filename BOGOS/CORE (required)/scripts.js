@@ -1,20 +1,22 @@
 // Configure your Shopify domain and API Key
 
 // You can find your store domain name in your Shopify admin under Online Store > Domains
-const shopDomain = 'YOUR SHOPIFY DOMAIN'; // e.g 'bogos-tapcart-integration.myshopify.com';
+const shopDomain = "YOUR SHOPIFY DOMAIN"; // e.g 'bogos-tapcart-integration.myshopify.com';
 
 //Replace with API Key. Please contact support from Bogos to to receive key
 const apiKey = "YOUR API KEY HERE";
 
-// Do not make changes below this line // 
+// Do not make changes below this line //
 
-const endpoint = 'https://api.freegifts.io/api-partner';
+const endpoint = "https://api.freegifts.io/api-partner";
 
 const bogosApiPath = {
   bogos: "/bogos-v2",
   giftCustomize: "/gift-customize",
   productsSyncQuantity: "/products-sync-quantity",
 };
+
+localStorage.setItem("currentGiftsAdded", JSON.stringify({}));
 
 const Api = {
   makeCallBogos: async (method, path, data) => {
@@ -178,11 +180,21 @@ const BogosIntegration = {
           },
         ],
       });
+
+      const currentGiftsAdded = JSON.parse(
+        localStorage.getItem("currentGiftsAdded")
+      );
+      currentGiftsAdded[variant.variant_id] =
+        (currentGiftsAdded[variant.variant_id] ?? 0) + variant.quantity;
+      localStorage.setItem(
+        "currentGiftsAdded",
+        JSON.stringify(currentGiftsAdded)
+      );
     }
 
     Tapcart.actions.addToCart(data);
   },
-  removeFromCart: (variants = []) => {
+  removeFromCart: (variants = [], minus = true) => {
     const data = { lineItems: [] };
     for (const variant of variants) {
       data.lineItems.push({
@@ -199,7 +211,21 @@ const BogosIntegration = {
           },
         ],
       });
+
+      if (minus) {
+        const currentGiftsAdded = JSON.parse(
+          localStorage.getItem("currentGiftsAdded")
+        );
+        currentGiftsAdded[variant.variant_id] =
+          (currentGiftsAdded[variant.variant_id] ?? variant.quantity) -
+          variant.quantity;
+        localStorage.setItem(
+          "currentGiftsAdded",
+          JSON.stringify(currentGiftsAdded)
+        );
+      }
     }
+
     Tapcart.actions.removeFromCart(data);
   },
   watchCartUpdate: () => {
@@ -211,6 +237,45 @@ const BogosIntegration = {
     if (cartItems.length === 0) {
       return;
     }
+    const currentGiftsAdded = JSON.parse(
+      localStorage.getItem("currentGiftsAdded")
+    );
+    const checkHackGift = cartItems.some((item) => {
+      return (
+        currentGiftsAdded[item.variantId] != undefined &&
+        item.quantity > currentGiftsAdded[item.variantId]
+      );
+    });
+
+    const checkIsGiftsOnly = cartItems.every((item) => {
+      return currentGiftsAdded[item.variantId] != undefined;
+    });
+
+    if (checkHackGift) {
+      cartItems.forEach((item) => {
+        if (item.quantity > currentGiftsAdded[item.variantId]) {
+          BogosIntegration.removeFromCart(
+            [
+              {
+                variant_id: item.variantId,
+                quantity: item.quantity - currentGiftsAdded[item.variantId],
+              },
+            ],
+            false
+          );
+        }
+      });
+      return;
+    }
+
+    if (checkIsGiftsOnly) {
+      const dataRemove = cartItems.map((item) => {
+        return { variant_id: item.variantId, quantity: item.quantity };
+      });
+      BogosIntegration.removeFromCart(dataRemove);
+      return;
+    }
+
     const dataCartToRequestBogos = {
       cartItems: cartItems.map((item) => {
         return {
@@ -235,9 +300,9 @@ const BogosIntegration = {
       BogosIntegration.handleLogicBogosGifts(res);
     } catch (e) {
       Tapcart.actions.showToast({
-    message: JSON.stringify(e.message),
-    type: 'success', // "success" || "error"
-})
+        message: JSON.stringify(e.message),
+        type: "success", // "success" || "error"
+      });
       return;
     }
   },
@@ -246,14 +311,14 @@ const BogosIntegration = {
     const bogosGiftToUpdate = bogosData?.gifts_change?.update ?? [];
     const todayOfferData = bogosData?.today_offers?.data ?? [];
 
-    if (bogosGiftToAdd.length > 0) {
-      BogosIntegration.addToCart(bogosGiftToAdd);
-    }
-
     if (bogosGiftToUpdate.length > 0) {
       const bogosGiftFilteredToRemove =
         BogosIntegration.handleGiftToRemove(bogosGiftToUpdate);
       BogosIntegration.removeFromCart(bogosGiftFilteredToRemove);
+    }
+
+    if (bogosGiftToAdd.length > 0) {
+      BogosIntegration.addToCart(bogosGiftToAdd);
     }
   },
   handleGiftToRemove: (bogosGiftToUpdate) => {
