@@ -15,7 +15,6 @@ const bogosApiPath = {
   giftCustomize: "/gift-customize",
   productsSyncQuantity: "/products-sync-quantity",
 };
-
 localStorage.setItem("currentGiftsAdded", JSON.stringify({}));
 
 const Api = {
@@ -314,7 +313,17 @@ const BogosIntegration = {
     if (bogosGiftToUpdate.length > 0) {
       const bogosGiftFilteredToRemove =
         BogosIntegration.handleGiftToRemove(bogosGiftToUpdate);
-      BogosIntegration.removeFromCart(bogosGiftFilteredToRemove);
+
+      const bogosGiftFilteredToAdd =
+        BogosIntegration.handleGiftToUpdateAdd(bogosGiftToUpdate);
+
+      if (bogosGiftFilteredToRemove.length > 0) {
+        BogosIntegration.removeFromCart(bogosGiftFilteredToRemove);
+      }
+
+      if (bogosGiftFilteredToAdd.length > 0) {
+        BogosIntegration.addToCart(bogosGiftFilteredToAdd);
+      }
     }
 
     if (bogosGiftToAdd.length > 0) {
@@ -330,7 +339,30 @@ const BogosIntegration = {
           (cartItem) => cartItem.variantId == bogosGift.variant_id
         );
 
-        if (cartItemFound) {
+        if (cartItemFound && cartItemFound.quantity > bogosGift.quantity) {
+          return {
+            variant_id: cartItemFound.variantId,
+            quantity: Math.abs(cartItemFound.quantity - bogosGift.quantity),
+          };
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
+  },
+  handleGiftToUpdateAdd: (bogosGiftToUpdate) => {
+    const cartItems = Tapcart.variables.cart.items ?? [];
+
+    return bogosGiftToUpdate
+      .map((bogosGift) => {
+        const cartItemFound = cartItems.find(
+          (cartItem) => cartItem.variantId == bogosGift.variant_id
+        );
+
+        if (
+          cartItemFound &&
+          cartItemFound &&
+          cartItemFound.quantity < bogosGift.quantity
+        ) {
           return {
             variant_id: cartItemFound.variantId,
             quantity: Math.abs(cartItemFound.quantity - bogosGift.quantity),
