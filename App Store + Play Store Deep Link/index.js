@@ -52,7 +52,7 @@ const determineMobileOS = () => {
 };
 
 const links = {
-    Android: (appId) => `https://play.google.com/store/apps/details?id=${appId}`,
+    Android: (_, appId) => `https://play.google.com/store/apps/details?id=${appId}`,
     iOS: (appName, appId) => `https://apps.apple.com/app/${appName.toLowerCase()}/id${appId}`,
 };
 
