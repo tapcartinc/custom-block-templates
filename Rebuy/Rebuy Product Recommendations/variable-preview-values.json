@@ -1,62 +1,208 @@
 {
-    "customer": {
-     "id": "779544431",
-     "first_name": "John"
-    },
-    "device": {
-     "id": "25679b7e-2348-44da-94ef-e218f6be4586",
-     "locale": "en"
-    },
-    "product": {
-     "id": "6875079049404",
-     "description": "<p>Vintage cotton Tapcart shirt</p>",
-     "options": [
-      {
-       "name": "Color",
-       "values": [
-        "Black",
-        "Blue"
-       ]
-      }
-     ],
-     "handle": "vintage-shirt",
-     "tags": [
-      "Vintage",
-      "Cotton",
-      "New"
-     ],
-     "availableForSale": true,
-     "title": "Vintage Tapcart Shirt",
-     "price": 55,
-     "metafields": {
-        "myNamespace1": {
-            "myKey1" : "myValue1"
+  "theme": {
+    "tokens": {
+      "colors": {
+        "coreColors": {
+          "brandColorPrimary": "#e21212",
+          "pageColor": "#FFFFFFFF",
+          "headerBackground": "#F2F0ED",
+          "inputBackground": "#FFFFFFFF",
+          "modalBackground": "#FFFFFFFF",
+          "tabBar": "#FFFFFF",
+          "dividingLines": "#E3E3E3FF",
+          "shadowsEnabled": true,
+          "primaryIcon": "#121212FF",
+          "secondaryIcon": "#727272",
+          "headerIcon": "#1c1b1d"
         },
-        "myNamespace2": {
-            "myKey2" : "myValue2"
+        "buttonColors": {
+          "primaryFill": "#e21212",
+          "primaryText": "#FFFFFFFF",
+          "primaryOutlineEnabled": false,
+          "primaryOutlineColor": "#00000000",
+          "primaryShadowEnabled": false,
+          "secondaryFill": "#00000000",
+          "secondaryText": "#e21212",
+          "secondaryOutlineEnabled": true,
+          "secondaryOutlineColor": "#e21212",
+          "secondaryShadowEnabled": false
+        },
+        "textColors": {
+          "primaryColor": "#121212FF",
+          "secondaryColor": "#727272",
+          "pageTitle": "#121212FF",
+          "legalText": "#727272",
+          "productTitle": "#727272",
+          "priceText": "#121212FF",
+          "strikethroughPriceText": "#727272FF",
+          "salePriceText": "#D91E18FF"
+        },
+        "stateColors": {
+          "subscriptions": "#008000FF",
+          "favorites": "#D91E18FF",
+          "reviews": "#FFAF02FF",
+          "success": "#008000FF",
+          "error": "#D91E18FF",
+          "warning": "#FFAF02FF",
+          "disabled": "#B1B1B1FF",
+          "skeleton": "#E3E3E3FF"
         }
-    },
-     "compareAtPrice": 100,
-     "vendor": "Tapcart",
-     "images": [
-      "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg"
-     ],
-     "variants": [
-      {
-       "selectedOptions": [
-        {
-         "name": "Color",
-         "value": "Black"
-        }
-       ],
-       "id": "40122114900156",
-       "price": 55,
-       "title": "Vintage Tapcart Shirt",
-       "isAvailable": true,
-       "compareAtPrice": 100,
-       "image": "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg",
-       "sku": "12938412"
       }
-     ]
     }
-   }
+  },
+  "customer": {
+    "id": "779544431",
+    "firstName": "John",
+    "metafields": {
+      "myNamespace1": {
+        "myKey1": "myValue1"
+      },
+      "myNamespace2": {
+        "myKey2": "myValue2"
+      }
+    }
+  },
+  "device": {
+    "id": "25679b7e-2348-44da-94ef-e218f6be4586",
+    "locale": "en"
+  },
+  "cart": {
+    "id": "e218f6be4586e218f6be4586",
+    "items": [
+      {
+        "quantity": 1,
+        "productId": "7629735690428",
+        "variantId": "43577520193749",
+        "sellingPlanId": "1039518903",
+        "attributes": [
+          {
+            "key": "value"
+          }
+        ]
+      }
+    ],
+    "appliedDiscounts": ["TEST10"],
+    "subtotal": 0,
+    "currency": "USD"
+  },
+  "session": {
+    "id": "ABCDE-12345-56789-XYZ"
+  },
+  "shop": {
+    "metafields": {
+      "myNamespace1": {
+        "myKey1": "myValue1"
+      },
+      "myNamespace2": {
+        "myKey2": "myValue2"
+      }
+    }
+  },
+  "product": {
+    "id": "6875079049404",
+    "description": "<p>Vintage cotton Tapcart shirt</p>",
+    "options": [
+      {
+        "name": "Color",
+        "values": ["Black", "Blue"]
+      }
+    ],
+    "handle": "vintage-shirt",
+    "tags": ["Vintage", "Cotton", "New"],
+    "availableForSale": true,
+    "title": "Vintage Tapcart Shirt",
+    "price": 55,
+    "metafields": {
+      "myNamespace1": {
+        "myKey1": "myValue1"
+      },
+      "myNamespace2": {
+        "myKey2": "myValue2"
+      }
+    },
+    "compareAtPrice": 100,
+    "vendor": "Tapcart",
+    "images": [
+      "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg"
+    ],
+    "selectedVariant": {
+      "id": "6875079049404"
+    },
+    "sourceCollection": {
+      "id": "238472398423",
+      "handle": "vintage-shirts",
+      "title": "Vintage Shirts",
+      "metafields": {
+        "myNamespace1": {
+          "myKey1": "myValue1"
+        }
+      }
+    },
+    "variants": [
+      {
+        "selectedOptions": [
+          {
+            "name": "Color",
+            "value": "Black"
+          }
+        ],
+        "id": "40122114900156",
+        "price": 55,
+        "title": "Vintage Tapcart Shirt",
+        "isAvailable": true,
+        "compareAtPrice": 100,
+        "image": "https://assets-global.website-files.com/616f0a7a027baaf59a43390b/616f0a7a027baab7e743396e_full.svg",
+        "sku": "12938412",
+        "metafields": {
+          "myNamespace1": {
+            "myKey1": "myValue1"
+          },
+          "myNamespace2": {
+            "myKey2": "myValue2"
+          }
+        },
+        "SellingPlanAllocations": [
+          {
+            "SellingPlan": {
+              "id": "549355658",
+              "name": "Delivery every 1 week",
+              "description": null,
+              "recurringDeliveries": true,
+              "SellingPlanPriceAdjustments": [
+                {
+                  "orderCount": null,
+                  "SellingPlanPriceAdjustmentValue": {
+                    "amount": 5,
+                    "currencyCode": "USD",
+                    "type": "FIXEDAMOUNT"
+                  }
+                },
+                {
+                  "orderCount": 3,
+                  "SellingPlanPriceAdjustmentValue": {
+                    "percentageAmount": 5,
+                    "type": "PERCENTAGE"
+                  }
+                }
+              ],
+              "SellingPlanOptions": [
+                {
+                  "value": "1 Week(s)",
+                  "name": "1 Week(s), 2 Week(s), 3 Week(s), 4 Week(s), 5 Week(s), 6 Week(s)"
+                }
+              ],
+              "SellingPlanAllocationPriceAdjustments": [
+                {
+                  "price": 32.3,
+                  "unitPrice": null,
+                  "compareAtPrice": 34,
+                  "perDeliveryPrice": 32.3
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

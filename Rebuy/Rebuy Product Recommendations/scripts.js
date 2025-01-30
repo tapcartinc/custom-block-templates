@@ -22,9 +22,6 @@ let multiPageProductId = "7129392382115";
 // Add to Cart or Open Product functionality?
 let typeOfBlock = "openProduct"; // openProduct or addToCart
 
-// Add to Cart background color
-let addToCartColor = "rgb(253,162,150)";
-
 // Add to Cart text
 let addToCartText = "Add to Cart";
 
@@ -155,13 +152,15 @@ function createAddToCartSection(hasVariants, variantOptions, variantId) {
       ${hasVariants ? `<div class="product-variants"><select>${variantOptions}</select></div>` : ""}
     </div>
     <div class="container">
-      <button class="add-to-cart" style="background-color: ${addToCartColor}" onClick="addToCart(event, '${variantId}')">${addToCartText}</button>
+      <button class="add-to-cart" onClick="addToCart(event, '${variantId}')">${addToCartText}</button>
     </div>
   `;
 }
 
 function setThemeColors(){
-  
+  const addToCartButton = document.querySelector(".add-to-cart"); 
+  let addToCartColor = Tapcart.variables.theme.tokens.colors.coreColors.buttonColors.primaryFill;
+  addToCartButton.style.backgroundColor = addToCartColor;
 }
 
 
